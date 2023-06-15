@@ -1,5 +1,7 @@
 ## Recent articles
 
+[Pretty writing in Emacs: exporting Org files to PDF](https://dev.to/escribapetrus/pretty-writing-in-emacs-exporting-org-mode-files-to-pdf-372i)
+
 [Transparent execution of Fortran code from the Erlang machine using ports](https://dev.to/escribapetrus/transparent-execution-of-fortran-code-from-the-erlang-machine-using-ports-37ba)
 
 [Notes on Russel's Introduction to Mathematical Philosophy](https://dev.to/escribapetrus/notes-on-russels-introduction-to-mathematical-philosophy-4ol6)

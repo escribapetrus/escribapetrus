@@ -1,0 +1,77 @@
+#+OPTIONS: toc:nil num:nil
+
+* Pedro Schreiber
+schreiber.mmb@gmail.com | +55 11 997612304 | https://github.com/escribapetrus
+
+** SUMMARY
+*Software engineer with 5 years of experience* developing different aspects of computer systems and web applications. Some of my experience includes:
+
+- Backend development with languages and frameworks like *Elixir/Phoenix, Javascript/Node, Python/Django/Flask*,
+  providing *REST and GraphQL APIs* for web applications and services
+- Frontend development with the vanilla stack of *HTML, CSS and Javascript*, frameworks like *React, Vue, Bootstrap*,
+  and tools such as *SASS and Typescript* 
+- Database systems, such as *MySQL, PostgreSQL, Redis, MongoDB*
+- Cloud and infrastructure for deploying applications to AWS, using services like *EC2, ECS, Fargate, S3*,
+  and tools like *Docker, Kubernetes and Terraform*.
+- *Object-Oriented Programming*, with a solid *understanding of patterns* and languages like Javascript, Python
+- *Functional programming languages*, with practical and theoretical understanding of concepts and languages like Elixir, Erlang, Haskell, and Lisp.
+
+** EXPERIENCE
+
+*** Stone - senior software engineer 2022 - current
+
+Developed an Elixir application that delivers notifications (email, sms, push, webhooks) to millions of users
+and applications daily through *asynchronous processing of Kafka events*.
+Developed client account systems using *UML data diagrams and Phoenix REST APIs*
+to structure and manipulate the PostgreSQL database.
+
+STACK: *Elixir, PostgreSQL, AWS, Docker, Kubernetes, Apache Kafka, React*
+
+*** Árvore - software engineer 2021 - 2022
+Developed an Elixir application that provides a digital library for schools,
+with an *MVC architecture* and complex modeling of user groups and levels.
+Integrated the React frontend with the Phoenix and MySQL database backend
+by writing *GraphQL and REST APIs*.
+
+STACK: *Elixir, Ruby on Rails, PHP, React, MySQL, PostgreSQL, AWS, Docker, Kubernetes*
+
+*** HavasPlus - software engineer 2020 - 2021
+
+Developed the website for the telecom company TIM.
+Modernized a legacy system to allow dynamic data rendering,
+by implementing a database backend and *Vue components written in Typescript*.
+
+STACK: *Typescript, Vue, HTML, SASS, Node*
+
+*** LQDI - Web Developer 2018 - 2019
+
+Created landing pages and email marketing in pure HTML, CSS, Javascript,
+and using tools like Vue components for interactivity and Bootstrap for responsiveness.
+
+STACK: *HTML, CSS, Javascript, Vue*
+
+*** Newbacon - CRM analyst 2018 - 2019
+
+Created data-driven email and sms communications, using SQL database and
+CRM tools to map client engagement with marketing campaigns.
+
+STACK: *MySQL, HTML, CSS*
+
+*** Rudek Wydra - content writer and web developer 2016 - 2018
+
+Created institutional websites for manufacturing industry companies
+and technology events, using Wordpress templates.
+
+STACK: *HTML, Wordpress*
+
+** EDUCATION
+- Universidade Anhembi Morumbi - BS, Computer Science (2020-2024)
+- Universidade de São Paulo - BA, Philosophy (2010-2015)
+
+** LANGUAGES
+
+- *Portuguese* native/proficient
+- *English* fluent/proficient, Cambridge CPE certified)
+- *French* intermediate
+- *Spanish* intermediate
+
