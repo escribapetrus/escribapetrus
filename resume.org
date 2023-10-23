@@ -18,7 +18,7 @@ schreiber.mmb@gmail.com | +55 11 997612304 | https://github.com/escribapetrus
 
 ** EXPERIENCE
 
-*** Stone - senior software engineer 2022 - current
+*** Stone - software engineer 2022 - current
 
 Developed an Elixir application that delivers notifications (email, sms, push, webhooks) to millions of users
 and applications daily through *asynchronous processing of Kafka events*.
