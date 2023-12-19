@@ -1,0 +1,82 @@
+#+TITLE: Notes on Russel's Introduction to Mathematical Philosophy
+#+AUTHOR: Pedro Schreiber
+#+DATE: 2023-03-09
+
+In the **Introduction to Mathematical Philosophy**, Bertrand Russell describes
+a philosophical ethos in relation to mathematics, that stands in contrast
+with the standard practice of mathematicians. Rather than progressing from
+a set of established principles into complex operations -- from the arithmetics
+of natural numbers to the algebra of real numbers, and from that to the differentiation
+and integration calculus -- Russel describes the philosophical ethos as the research
+of the essence of mathematics, and the logical operations by which we can deduce these
+foundational principles, such as numbers, sequences, sets and functions.
+
+As mathematics undergoes a process of arithmetisation, in a divergence from formal logic,
+it follows that, in order to take on the investigation of its principles,
+it is necessary to define first the fundamental concept of number.
+As Russell describes it, though the number is an ubiquitous concept in the hundreds of years
+of the history of mathematics, a clear and correct definition was only formalised
+and published in recent years, by Frege (**Foundations of Arithmetics**, 1884).
+Frege's definition is different to that of Peano, who defines numbers in terms
+of sequences or progressions, and also subtly different to the philosophers who defined numbers
+simply in terms of plurality -- one apple, two apples, three apples.
+
+The problems in defining numbers in terms of progressions or plurality are:
+
+- Progressions :: while they provide a correct knowledge about the relationships of numbers
+  -- according to the function f(x) that determines the successor of x --
+  they do not provide any knowledge about the number itself and what it represents;
+  if we change the reference to the first element of the sequence,
+  the reference to all elements in the sequence is lost.
+- Plurality ::  while it does provide knowledge of a single number in terms of the quantity of objects,
+  it tells us nothing about the number as a number -- and, more importantly,
+  about what numbers are; in other words, it provides a sense of what "three" is,
+  but not of what "number" is.
+
+A precise definition of what a number is requires that we abstract
+a single quantity into the general concept of all quantities,
+therefore putting forward the concept of groups -- or, more precisely, classes.
+Just as we can define a class a with three apples, and a class b with three bananas,
+we can define a class of all classes with three elements (i.e. all classes similar
+to a class with three elements, in terms of quantity of elements). Similarly,
+we can describe a class of all classes with thirty elements, or a class
+of all classes with three hundred elements.
+
+#+BEGIN_QUOTE
+The number of a class, then, will be the class of all classes similar to it.
+A number is any entity that is the number of a class.
+#+END_QUOTE
+
+The definition of numbers in terms of classes is interesting to the student of computer sciences,
+because of the importance that term has gained since the advent of object-oriented programming.
+Though I want to tread carefully and avoid the sin of anachronism
+(we are talking about a text written in 1919, when modern computation by electronic machines
+was a distant dream), it is worthy of note how Russell describes classes as "logical fictions"
+-- not real things in and of themselves, but rather a sort of imaginary line traced around objects,
+grouping them together in terms of some arbitrary common description (generative function;
+e.g. the class of men, the class of cars).
+
+Am I then accusable of being too hasty and unconsidered in seeing a similarity
+between this definition of classes with the concept of abstract data types,
+which is so cherished in the field of object-oriented programming?
+Of course classes in OOP languages are much more complex structures --
+with attributes, behaviours, contracts, interfaces -- than the simple abstractions
+of classes as "logical fictions" described by Russell; but I do see how we could interpret
+the latter as the former's source and inspiration. 
+
+We could, for example, describe the type specification of a class constructor
+as its intentional definition, and the instances of a class as its extensional definition.
+As Russell writes, classes can be defined in two ways: extensionally,
+in terms of its members, or intentionally, in terms of an abstract description;
+so, a class A could be defined as: 
+
+- A = {Jack, Jim} 
+- A = "men in this room now"
+
+As for methods, they describe the relations between objects of this class
+with other objects in the world.This approximation was brought to my mind because
+of a tweet someone posted some other day, about the weirdness of writing numbers
+as class objects in OOP languages, which leads to constructs such as ~10.is_pair()~.
+As we see in Russell's writing, the idea of describing numbers as abstract classes
+capable of having properties is not an invention of object-oriented programming.
+

@@ -1,0 +1,124 @@
+#+TITLE: Fantasy-Oriented Programming
+#+AUTHOR: Pedro Schreiber
+#+DATE: 2022-01-12
+
+Fantasy is the realm of imagination, magic, and dreaming about endless possibilities,
+even the seemingly or truly impossible. It allows us not just to question
+"what would it be if...", but actively express and create possible worlds,
+even if they do not make sense in reality. Sure, giant reptiles cannot fly and spit fire:
+there is no muscle mass and energy source that would allow that; /but what if they did/? 
+
+Programming is a fantastic activity, even if we lose sight of that aspect.
+It creates reasoning -- a spiritual thing -- from sand and metal;
+that is something not even the most audacious magicians and alchemists could dream.
+It is no joke when Sussman compares sorcery and computation, which harnesses the demon
+in the machine to produce magic results.
+
+#+BEGIN_VERSE
+"You, the Spirit of Earth, are nearer:
+Already, I feel my power is greater,
+Already, I glow, as with fresh wine.
+I feel the courage to engage the world,
+Into the pain and joy of Earth be hurled
+And though the storm wind is unfurled,
+Fearless, in the shipwreck’s teeth, be whirled."
+Faust conjures the Earth Spirit, Goethe, pt. I, sc. I
+#+END_VERSE
+
+Fantasy-oriented programming is not a paradigm. Rather, it is an ethos,
+a reflective understanding of ourselves as programmers. By contemplating the abstract,
+philosophical, and almost mystic aspects of programming, we allow ourselves to feel awe
+-- a double affection of being at the same time terrified and fascinated by greatness --
+in face of the vast universe of possibilities offered by computation by machines.
+
+* Art and science: identity and difference
+There is in programming a tension between science and art, which is common to all human activity.
+
+By science, I mean the work of the human mind, /the abstraction of real entities into symbolic representations,
+and the logical operations of the intellect on these symbols/. Think geometry,
+computer algorithms, musical composition.
+
+By art, I mean the work of the human hand, /the hypostasis of spiritual entities into real substance
+by transforming the physical matter/. Think building a house, manufacturing computer hardware,
+playing the guitar.
+
+Programming has these two contradictory aspects at once, coexisting in a harmony.
+They cannot exist one without the other. We cannot compute equations without giving instructions
+to the processor, which transforms them into the physical reality of electrical pulses;
+conversely, it is in the symbolic representation of these physical realities
+that we find meaning through equations.
+
+* The pragmatic ethos
+There is a pragmatic approach to programming that is akin to the work of the artist.
+The Artist does not care about the alignment of doors and windows to the stars and constellations;
+he does not need to understand the principles of trigonometry in order to build walls and a roof.
+He has built many houses, and knows how it is done, by experience.
+
+The spirit of the Artist lives in the pragmatic programmer. His job is not to make systems
+that correctly implement mathematical equations; he does not care about the abstraction
+of types and sets into categories; the word /monad/ to him is a distraction, nothing more.
+
+## The scientific ethos
+Similarly, there is a scientific approach to programming. The Philosopher spends his days
+pondering questions his kindred, the Artist, rejects, marveling at how objects in the world
+can be represented in a language of mathematical symbols, and how even these symbols can be
+expressed by even more abstract representations.
+
+* The virtue of balance
+There is a reason why the book "The Pragmatic Programmer" is considered a classic in this field.
+Pragmatism is a major virtue in programming. As developers, our job is not to prove mathematical theorems,
+but to create systems that are useful, that add value to the lives of users, whether in daily work,
+study or leisure. 
+
+Pragmatism is also a major asset in the professional career of a programmer.
+As a Philosophy major, I have often heard people say: "that is so fascinating;
+but what do you do with it, for a job?". This is a legitimate concern.
+Companies are not concerned with understanding the mysteries of the universe
+and the human experience, but rather with developing, launching and selling products.
+So, what matters is the skills and tools you can effectively use.
+For example, if you're a marketer, it does not matter whether you have any insights
+about communication in abstract, but only whether you can communicate the advantages
+of a product over the competition in 50 words or less. The same goes for programming.
+
+If no employer is ever going to ask us /"how to express computation with lambda calculus"/,
+or for a /comprehensive intuition about monads/, what is the purpose of learning these things?
+Rather than spending time and mental energy with that, is it not more beneficial
+to apply these resources to learn something practical like how to operate the Amazon cloud
+or build apps with Flutter?
+
+"More useful", yes, definitely. But I would argue that there is a virtue in harnessing
+the philosophical spirit, even to the most pragmatic programmer. It challenges us
+to unravel an arcane knowledge through the power of spirit; it reveals to us that the universe
+is wider than our comprehension, and that our practical action of constructing things
+using tools is the expression of timeless principles; it shows us that there are people
+out there who have attained higher wisdom, which beckons us to keep moving forward. 
+
+I remember the first time I watched a class about Haskell. The explanation of
+how we can represent complex logical and mathematical operations with the simple notation
+of lambda calculus is something I will never forget. I felt like the young Artie
+listening to Merlin, fascinated by the wizard's wisdom and his wonderful tales
+of the achievements of art and science.
+
+[[https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yq94a19o7ivktfdg1bf8.jpeg][The Sword In The Stone, my favorite Disney movie]]
+
+That fascination, which fuels passion and curiosity,
+is the source of my belief in the virtue of contemplating the
+philosophical aspects of computer science. That is fantasy-oriented programming.
+
+In summary, there is nothing I can say that Byron has not said better, in these words:
+
+#+BEGIN_VERSE
+"I love not Man the less, but Nature more,
+From these our interviews, in which I steal
+From all I may be, or have been before,
+To mingle with the Universe, and feel
+What I can ne'er express, yet cannot all conceal."
+#+END_VERSE
+
+
+
+
+
+
+
+

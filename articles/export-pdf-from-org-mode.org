@@ -4,8 +4,6 @@
 
 #+OPTIONS: toc:nil num:nil
 
-* Introduction: Org to LaTeX to PDF
-
 There are two types of Emacs users: those who give up and go back to vscode, and those who get
 full citizenship and move permanently to Emacs town. This article is for those masochists who don't care
 if Google provides an easier tool for writing pretty texts and code notebooks.

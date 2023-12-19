@@ -1,4 +1,8 @@
-* Transparent execution of Fortran code from the Erlang machine using ports
+#+TITLE: Transparent execution of Fortran code from the Erlang machine using ports
+#+AUTHOR: Pedro Schreiber
+#+DATE: 2023-03-09
+
+#+OPTIONS: toc:nil num:nil
 
 Joe Armstrong, creator of the Erlang programming language, said a couple of times that,
 though the Erlang system is the perfect tool for writing programs designed for concurrent execution,
@@ -7,7 +11,7 @@ would be best served by calling an external program written in Fortran.
 
 The problem, however, is that he never told us how to run such a program from inside the Erlang machine.
 
-** The plan
+* The plan
 
 We are going to write a Fortran program that receives input and does some calculations with the values
 provided by the user. Because our problem here is not how to write Fortran, but rather how to run the
@@ -22,14 +26,14 @@ Our objective is to call the genserver API in Erlang, have the function transpar
 Fortran program (that is, as if it had been called locally) and return the correct result.
 
 #+BEGIN_SRC erlang
-Eshell V13.1.2  (abort with ^G)
-1> f90:start_link("./newton").
-{ok,<0.84.0>}
-2> f90:force(90,80).
-7200  
+  Eshell V13.1.2  (abort with ^G)
+  1> f90:start_link("./newton").
+  {ok,<0.84.0>}
+  2> f90:force(90,80).
+  7200  
 #+END_SRC
 
-** The Fortran program
+* The Fortran program
 
 First, we focus on the Fortran program that will effectively perform the calculations.
 As we said, we are going to calculate the force using newton's formula, which is, as we all know,
@@ -38,24 +42,24 @@ defined as: f = m * a.
 Let's start with the simplest program possible:
 
 #+BEGIN_SRC fortran
-! newton0.f90
-program newton
-  implicit none
-  integer mass, accel
+  ! newton0.f90
+  program newton
+        implicit none
+    integer mass, accel
 
-  mass = 90
-  accel = 80
-  
-  write (*,'(10i0)') force(mass, accel)
+    mass = 90
+    accel = 80
 
-contains
-  function force(m, a) result (f)
-    implicit none
-    integer m, a, f
+    write (*,'(10i0)') force(mass, accel)
 
-    f = m * a
-  end function force
-end program newton
+  contains
+    function force(m, a) result (f)
+      implicit none
+      integer m, a, f
+
+      f = m * a
+    end function force
+  end program newton
 #+END_SRC
 
 #+RESULTS:
@@ -71,61 +75,59 @@ the correct result.
 For the next step, we need to process user input:
 
 #+BEGIN_SRC fortran :stdin t
-! newton.f90
-program newton
-  implicit none
-  integer rstat
-  integer mass, accel
-  character(20) :: input
-
-  do while(.true.)
-     do while(.true.)
-        read(*,'(A)',iostat=rstat) input
-
-        if (rstat /= 0) then
-           stop
-        else
-           if (input(1:4) == 'mass') then
-              call maybe_read_int(mass, 4 + 2) 
-           else if (input(1:5) == 'accel') then
-              call maybe_read_int(accel, 5 + 2)
-           else if (input(1:6) == 'return') then
-              exit
-           else
-              write(*,*) 'bad input' 
-           end if
-        end if
-     end do
-
-     write (*,'(10i0)') force(mass, accel)
-
-     mass = 0
-     accel = 0
-  end do
-
-contains
-  subroutine maybe_read_int(field, index)
+  ! newton.f90
+  program newton
     implicit none
-    integer field, index
+    integer rstat
+    integer mass, accel
+    character(20) :: input
 
-    read(input(index:), *, iostat=rstat) field
-    if (rstat == 0) then
-       write(*,'(10i0)') field
-    else
-       write(*,*) 'bad input'
-    endif
-  end subroutine maybe_read_int
+    do while(.true.)
+       do while(.true.)
+          read(*,'(A)',iostat=rstat) input
 
-  function force(m, a) result (f)
-    implicit none
-    integer m, a, f
+          if (rstat /= 0) then
+             stop
+          else
+             if (input(1:4) == 'mass') then
+                call maybe_read_int(mass, 4 + 2) 
+             else if (input(1:5) == 'accel') then
+                call maybe_read_int(accel, 5 + 2)
+             else if (input(1:6) == 'return') then
+                exit
+             else
+                write(*,*) 'bad input' 
+             end if
+          end if
+       end do
 
-    f = m * a
-  end function force
-end program newton
+       write (*,'(10i0)') force(mass, accel)
+
+       mass = 0
+       accel = 0
+    end do
+
+  contains
+    subroutine maybe_read_int(field, index)
+      implicit none
+      integer field, index
+
+      read(input(index:), *, iostat=rstat) field
+      if (rstat == 0) then
+         write(*,'(10i0)') field
+      else
+         write(*,*) 'bad input'
+      endif
+    end subroutine maybe_read_int
+
+    function force(m, a) result (f)
+        implicit none
+      integer m, a, f
+
+      f = m * a
+    end function force
+  end program newton
 #+END_SRC
-
-#+RESULTS:
 
 The program starts with a loop, which reads the standard input and assigns its value to a string.
 The input is matched to the expected patterns:
@@ -137,20 +139,20 @@ The input is matched to the expected patterns:
 Next, the program prints the result of the force function over the variables, just like in the
 previous snippet. Let's compile the program and run it in the terminal to see it in action.
 
- #+BEGIN_SRC
-> ./newton
-> mass 90
-90
-> accel 80
-80
-> return
-7200
+#+BEGIN_SRC shell
+  > ./newton
+  > mass 90
+  90
+  > accel 80
+  80
+  > return
+  7200
 #+END_SRC
 
 Great, we have successfully written a Fortran program that calculates the force using the newtonian formula.
 Now, we need to write an Erlang program that is able to run it.
 
-** The Erlang program
+* The Erlang program
 
 As we said, we want to be able to call an Erlang function that produces the result from
 the fortran program's execution. The appropriate way to do this in Erlang is using ports.
@@ -184,24 +186,24 @@ Luckily for us, our Fortran program is designed to expect very simple binary pat
 create a port and send and receive messages.
 
 #+BEGIN_SRC erlang
-Eshell V13.1.2  (abort with ^G)
-1> Port = open_port({spawn, "./newton"}, [use_stdio, exit_status]). 
-#Port<0.5>
-2> Port ! {self(), {command, "mass 90\n"}}.
-{<0.82.0>,{command,"mass 90\n"}}
-3> flush().
-Shell got {#Port<0.5>,{data,"90\n"}}
-ok
-4> Port ! {self(), {command, "accel 90\n"}}.
-{<0.82.0>,{command,"accel 90\n"}}
-5> flush().
-Shell got {#Port<0.5>,{data,"90\n"}}
-ok
-6> Port ! {self(), {command, "return\n"}}.  
-{<0.82.0>,{command,"return\n"}}
-6> flush().
-Shell got {#Port<0.5>,{data,"8100\n"}}
-ok
+  Eshell V13.1.2  (abort with ^G)
+  1> Port = open_port({spawn, "./newton"}, [use_stdio, exit_status]). 
+  #Port<0.5>
+  2> Port ! {self(), {command, "mass 90\n"}}.
+  {<0.82.0>,{command,"mass 90\n"}}
+  3> flush().
+  Shell got {#Port<0.5>,{data,"90\n"}}
+  ok
+  4> Port ! {self(), {command, "accel 90\n"}}.
+  {<0.82.0>,{command,"accel 90\n"}}
+  5> flush().
+  Shell got {#Port<0.5>,{data,"90\n"}}
+  ok
+  6> Port ! {self(), {command, "return\n"}}.  
+  {<0.82.0>,{command,"return\n"}}
+  6> flush().
+  Shell got {#Port<0.5>,{data,"8100\n"}}
+  ok
 #+END_SRC
 
 We create a port with the erlang library function open_port/2, which receives the command to the external
@@ -216,50 +218,50 @@ We are very close to wrapping this up. All that is left is to put this functiona
 manages the port and provides a clear interface in accordance with the OTP standards.
 
 #+BEGIN_SRC erlang
--module(f90).
--behaviour(gen_server).
+  -module(f90).
+  -behaviour(gen_server).
 
--export([start_link/1, force/2, stop/0]).
--export([init/1, handle_call/3, handle_cast/2]).
+  -export([start_link/1, force/2, stop/0]).
+  -export([init/1, handle_call/3, handle_cast/2]).
 
-%% API
-start_link(Filename) ->
-    gen_server:start_link({local, ?MODULE}, ?MODULE, Filename, []).
+  %% API
+  start_link(Filename) ->
+      gen_server:start_link({local, ?MODULE}, ?MODULE, Filename, []).
 
-stop() ->
-    gen_server:cast(?MODULE, stop).
+  stop() ->
+      gen_server:cast(?MODULE, stop).
 
-force(Mass, Accel) ->
-    gen_server:call(?MODULE, {force, Mass, Accel}).
+  force(Mass, Accel) ->
+      gen_server:call(?MODULE, {force, Mass, Accel}).
 
-%% callbacks
-init(Filename) ->
-    process_flag(trap_exit, true),
-    Port = open_port({spawn, Filename}, [use_stdio, exit_status]),
-    {ok, {port, Port}}.
+  %% callbacks
+  init(Filename) ->
+      process_flag(trap_exit, true),
+      Port = open_port({spawn, Filename}, [use_stdio, exit_status]),
+      {ok, {port, Port}}.
     
-handle_call({force, Mass, Accel}, _From, {port, Port} = State) ->
-    call_port(mass(Mass), Port),
-    call_port(accel(Accel), Port),
-    Res = call_port(result(), Port),
-    {reply, Res, State}.
+  handle_call({force, Mass, Accel}, _From, {port, Port} = State) ->
+      call_port(mass(Mass), Port),
+      call_port(accel(Accel), Port),
+      Res = call_port(result(), Port),
+      {reply, Res, State}.
     
-handle_cast(stop, {port, Port}) ->
-    port_close(Port),
-    {stop, normal, []}.
+  handle_cast(stop, {port, Port}) ->
+      port_close(Port),
+      {stop, normal, []}.
 
-call_port(X, Port) ->
-    port_command(Port, X),
-    receive
-	{_, {data, Data}} ->
-	    TrimmedData = string:trim(Data),
-	    list_to_integer(TrimmedData)
-    after 500 -> nil
-    end.
+  call_port(X, Port) ->
+      port_command(Port, X),
+      receive
+          {_, {data, Data}} ->
+              TrimmedData = string:trim(Data),
+              list_to_integer(TrimmedData)
+      after 500 -> nil
+      end.
 
-accel(X) -> "accel " ++ integer_to_list(X) ++ "\n".
-mass(X) -> "mass " ++ integer_to_list(X) ++ "\n".
-result() -> "return\n".
+  accel(X) -> "accel " ++ integer_to_list(X) ++ "\n".
+  mass(X) -> "mass " ++ integer_to_list(X) ++ "\n".
+  result() -> "return\n".
 #+END_SRC
 
 We start the genserver with start_link/1 by providing the external program command as argument.
@@ -271,7 +273,7 @@ sends messages to the port and receives the response from the external program.
 With this, we have implemented exactly the functionality we wanted in the beginning: a server that provides
 a simple Erlang function that produces the result of a calculation done in an external Fortran program.
 
-** Conclusion
+* Conclusion
 
 The computer is an awesome machine, and it provides so many different tools and patterns with which
 we can create programs. It is a waste of intelligence to be confined to a single programming language.

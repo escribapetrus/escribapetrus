@@ -1,0 +1,326 @@
+#+TITLE: Compreendendo tipos de dados algébricos com exemplos em Elixir
+#+AUTHOR: Pedro Schreiber
+#+DATE: 2022-01-12
+
+#+BEGIN_VERSE
+"Il est des jours de brume et de lumière vague,
+Où l'homme, que la vie à chaque instant confond,
+Étudiant la plante, ou l'étoile, ou la vague,
+S'accoude au bord croulant du problème sans fond."
+Victor Hugo
+#+END_VERSE
+
+Números, no mundo real, raramente são apenas números. Pelo contrário,
+quase sempre apresentam-se como valores relativos a um certo atributo, categoria, unidade de medida.
+Se alguém dissesse: "este prédio tem 48", nossa resposta imediata seria, "48 o que?"
+
+Imaginemos um prédio com 48 metros de altura. Isso é tudo que podemos dizer sobre este prédio?
+É claro que não. Podemos enumerar uma série de valores e atributos que descrevem esse prédio
+e compõem sua existência. Por exemplo: 
+
+#+BEGIN_SRC elixir
+  predio = %{
+      altura: 48,
+      unidades: 64,
+      cores: [:branco, :laranja],
+      categoria: :comercial,
+      completo: true 
+  }
+#+END_SRC
+
+Essa descrição é bastante inteligível, e nos permite imaginar um prédio real. Levando esse exercício mais longe,
+poderíamos abstrair os valores específicos, descrevendo um prédio platônico, uma ideia de todos os prédios possíveis.
+Construiríamos, assim, um _tipo de dados prédio_, composto pelos diferentes tipos de dados que descrevem os prédios
+(altura, unidades, cores, categorias, estágio de construção). 
+
+Neste artigo, explicaremos os tipos de dados algébricos, isto é, como definir tipos de dados compostos de tipos singulares
+e as regras que governam sua composição. Mostraremos os exemplos mais comuns de tipos de dados algébricos,
+como tipo multiplicação e soma de tipos, tipos de funções ou exponenciação de tipos, e tipos recursivos,
+utilizando exemplos na linguagem Elixir.
+
+* Tipos de dados
+
+Toda computação é uma operação sobre valores de determinados tipos. Para explicar os tipos de dados,
+a ciência da computação costuma referir-se ao tamanho e à disposição dos números binários que expressam
+os elementos de diferentes tipos: desta maneira é formalizada a distinção entre
+/Integers/ e /Longs/, /Floats/ e /Doubles/ -- quanto maior o espaço em memória reservado aos valores,
+maior a precisão ou o limite de valores representáveis. A mesma explicação vale para coleções de tipos,
+como arrays de tamanho fixo: o tamanho da coleção é o tamanho do dado multiplicado pelo numero de entradas na coleção.
+
+Entretanto, essa explicação é limitada quando queremos nos referir a certos valores computáveis.
+Por exemplo, como podemos expressar em termos de quantidade de bits uma coleção com um número indeterminado de valores;
+ou, em outras palavras: qual é o tamanho de uma coisa da qual não sabemos o tamanho? 
+
+#+BEGIN_SRC elixir
+  @spec tamanho(list()) :: integer()
+  def tamanho([]), do: 0
+  def tamanho([h|t]), do: 1 + tamanho(t)
+#+END_SRC
+
+É claro, neste exemplo, que o tipo `list()` não pode ser definido em termos de quantidade de bits,
+porque a quantidade varia de acordo com o tamanho da lista. Vamos, então, usar outra explicação:
+/tipos são representações abstratas de valores possíveis de operações computacionais/.
+Em uma analogia com a teoria matemática dos conjuntos, um tipo é um conjunto de valores.
+
+* Tipos de dados algébricos
+
+Da mesma maneira como somos capazes de criar funções que operam sobre números e produzem determinados valores,
+podemos definir operações sobre tipos de dados, que produzam tipos compostos de outros tipos. 
+
+Entretanto, tipos de dados são muito diferentes de números. Antes de realizar operações com tipos de dados,
+precisamos descrever uma certa álgebra que governe as regras de composição dos tipos.
+Para isso, recorremos à matemática, especificamente à teoria dos conjuntos. 
+
+Tipos de dados algébricos nos permitem definir coisas como:
+
+#+BEGIN_SRC elixir
+  # apelidos
+  @type palavras_magicas :: charlist()
+  @type resultado :: boolean()
+  # tipos compostos
+  @type elemento() :: :fogo | :terra | :agua | :ar
+  @type mistura() :: {elemento(), elemento()}
+  @type transformacao(a, b) :: (a -> b)
+  # tipos recursivos
+  @type lista(a) :: {} | {a, lista(a)}
+  @type arvore(a) :: {} | a | {arvore(a), arvore(a)}
+#+END_SRC
+
+Entendidos de forma matemática, tipos de dados algébricos podem ser definidos em termos de três operações básicas:
+soma, multiplicação e potenciação. Assim como entendemos um tipo de dados como o conjunto dos seus valores possíveis,
+/um tipo composto é o conjunto dos valores possíveis resultante da composição/. 
+
+* Soma de tipos
+
+O que significa falar sobre a soma de dois tipos de dados, como "inteiro mais booleano"? A idéia parece estranha a princípio.
+Para entender, vamos primeiro pensar sobre a soma de números, que já conhecemos:
+dois mais três são cinco, quatro mais cinco são nove, e assim por diante. 
+
+A soma de tipos é semelhante. Se descrevermos um tipo como o conjunto dos valores possíveis,
+a soma de tipos é a soma do número desses valores. Por exemplo, imaginemos um tipo "certeza", com dois valores: verdadeiro e falso;
+imaginemos um tipo que tem apenas um valor possível, e vamos chamá-lo de "dúvida". Somando os dois tipos,
+compomos um tipo com três valores possíveis: ou é verdadeiro, ou é falso, ou é duvidoso. Vamos chamar esse tipo de "hipótese":
+
+#+BEGIN_SRC elixir
+  @type duvida() :: :undefined
+  @type certeza() :: boolean()
+
+  @type hipotese() :: duvida | certeza
+
+  valores_possiveis = [
+      true,
+      false,
+      :undefined
+  ]
+#+END_SRC
+
+É fácil entender que somamos tipos com 1 e 2 valores, e obtivemos um tipo com 3 valores.
+Em matemática, na teoria dos conjuntos, essa composição é chamada de disjunção: "A ou B".
+
+Funções que aceitam tipos compostos dessa maneira apresentam comportamentos diferentes dependendo do tipo de dado utilizado
+(o que nos levaria a um outro tópico, /polimorfismo/, que não trataremos neste artigo).
+Para isso, é necessário utilizar estruturas condicionais, como /if, guards ou pattern match/: 
+
+#+BEGIN_SRC elixir
+  @type t() :: boolean() | integer()
+
+  @spec f(t()) :: atom()
+  def f(x) when is_boolean(x), do: :bool
+  def f(x) when is_integer(x), do: :int
+#+END_SRC
+
+Representamos a soma de tipos como ~a + b~.
+
+* Multiplicação de tipos
+
+A multiplicação de tipos segue uma lógica semelhante. Para entender, vamos primeiro pensar sobre a multiplicacão de números,
+que já conhecemos: dois vezes três são seis, três vezes três são nove, e assim por diante. 
+
+A multiplicação de tipos é semelhante. Se descrevermos um tipo como o conjunto dos valores possíveis,
+a multiplicação de tipos é a multiplicação do número de valores desses tipos.
+Por exemplo, imaginemos um tipo "materiais", com dois valores: "madeira" e "pedra";
+imaginemos um tipo "cores", com três valores, "branco", "amarelo" e "azul". Multiplicando os dois tipos,
+compomos um tipo com seis valores possíveis. Vamos chamar esse tipo de "casa":
+
+#+BEGIN_SRC elixir
+  @type material() :: :madeira | :pedra
+  @type cor() :: :branco | :amarelo | :azul
+  @type casa() :: {material(), cor()}
+
+  valores_possíveis = [
+      {:madeira, :branco},
+      {:madeira, :amarelo},
+      {:madeira, :azul},
+      {:pedra, :branco},  
+      {:pedra, :amarelo},
+      {:pedra, :azul}
+  ]
+#+END_SRC 
+
+É fácil entender que multiplicamos tipos com 2 e 3 valores, e obtivemos um tipo com 6 valores. Em matemática, na teoria dos conjuntos,
+o número de valores do produto de dois tipos corresponde ao produto cartesiano de dois conjuntos, e o valor composto a uma intersecção, "A e B".
+
+Para nossa surpresa, esse tipo de dado algébrico não é uma novidade, mas um velho conhecido: uma tupla de n valores.
+Esta é a razão por que os /records/ em Erlang (nome dado para /structs/ ou /hash tables/, coleções de valores de tipos distintos)
+são implementados simplesmente como tuplas normais.
+
+#+BEGIN_SRC erlang
+  -record(casa, {material, cor}).
+
+  #casa{material=madeira, cor=branco}.
+  % é o mesmo que
+  {casa, madeira, branco}
+#+END_SRC
+
+Representamos a multiplicação de tipos como ~a * b~.
+
+* E quando o número de valores for infinito?
+
+Quando entendemos a composição de tipos de valores finitos, fica fácil entender a composição de tipos de valores infinitos.
+Lembremos que na matemática, na teoria dos conjuntos, nem todos os infinitos são iguais: o conjunto dos números reais é infinito;
+o conjunto de números divisíveis por 999 também é infinito, mas eles são infinitos muito diferentes. 
+
+Vamos definir um tipo "booleano inteiro"; em outras palavras, um número que pode ser verdadeiro ou falso.
+Para isso, multiplicamos o tipo booleano pelo tipo inteiro. Nosso novo tipo tem um número de valores possíveis
+que é o número de valores possíveis do tipo booleano vezes o número de valores possíveis do tipo inteiro: 
+
+#+BEGIN_SRC elixir
+  type booleano() :: :verdadeiro | :falso
+  type inteiro() :: 1 | 2 | 3 | 4 | 5 | ... 
+  type bool_int() :: {booleano(), inteiro()}
+
+  valores possíveis = [
+      {:verdadeiro, 1}, {:verdadeiro, 2}, {:verdadeiro, 3}, ...,
+      {:falso, 1}, {:falso, 2}, {:falso, 3}, ...
+  ]
+#+END_SRC
+
+* Tipos de funções
+Em muitas linguagens de programação, funções são objetos de primeira classe, ou seja são entidades em si próprias,
+e podem ser registradas em variáveis, passadas como argumentos de funções ou retornadas como resultados de uma função.
+A exponenciação de tipos é a composição de tipos em tipos de funções, isto é, corresponde
+ao conjunto de funções que mapeiam valores de um tipo a outro. 
+
+Por exemplo, podemos definir um tipo de função "validação numérica" que aceita um valor inteiro e retorna um valor booleano.
+Utilizamos funções do tipo "validação" como funções de alta ordem, aplicando à função "validar" para garantir
+que um valor é válido ou não para determinada aplicação:
+
+#+BEGIN_SRC elixir
+  @type validacao() :: 
+    (integer() -> boolean())
+  @type resultado() :: 
+    {atom(), integer()} | {atom(), charlist()}
+
+  @spec validar(integer(), validacao()) :: atom()
+  def validar(x, regra) do 
+      if regra.(x) do
+          {:ok, x}
+      else 
+      {:erro, "valor inválido"}
+  end
+#+END_SRC
+
+Tipos de dados algébricos nos proporcionam propriedades interessantes para pensar a lógica e a matemática das funcões em programas computacionais.
+Por exemplo, sabemos que na álgebra do conjunto de números reais, a seguinte propriedade é válida:
+~a^(b+c) = a^b * a^c~. Ora, esta propriedade também é válida para tipos algébricos:
+
+#+BEGIN_SRC elixir
+  @type elemento() :: :agua | :ar | :fogo | :terra
+  @type espirito() :: :trevas | :luz 
+  @type efeito() :: :boom | :kablam
+
+  # a^(b+c)
+  @spec magia(elemento() | espírito()) :: efeito()
+  def magia(poder) do
+      cond do
+          elemento?(poder) -> :boom
+          espirito?(poder) -> :kablam
+      end
+  end
+
+  # a^b * a^c`
+  @spec feitico(elemento()) :: efeito()
+  def feitico(poder) when elemento?(poder), do: :boom
+
+  @spec bruxaria(espirito()) :: efeito()
+  def bruxaria(poder) when espirito?(poder), do: :kablam
+
+
+  defp elemento?(x), do: x in [:agua, :ar, :fogo, :terra]
+  defp espirito?(x), do: x in [:trevas, :luz]
+#+END_SRC
+
+O que a propriedade descreve é que o mesmo cálculo pode ser representado de duas maneiras distintas:
+como duas funções que aceitam tipos a e b, ou como uma só função que aceita um tipo composto a + b.
+
+* Tipos recursivos
+Vimos como representar tipos compostos de um número definido de elementos: pares, tuplas, variantes.
+Estes tipos, embora nos proporcionem um grande poder expressivo para estruturar os dados de um programa,
+ainda não respondem uma questão que colocamos no início: como podemos representar um conjunto com um número indefinido de elementos? 
+
+Para isso, precisamos recorrer a um dispositivo que nos permita trabalhar com repetições. Em programação funcional,
+esse dispositivo é a recursão. Da mesma maneira como podemos definir funções recursivas que expressam-se em termos de si mesmas,
+podemos definir tipos que expressam-se em termos de si mesmos, recursivamente. Podemos, por exemplo,
+definir uma lista como a junção de um elemento a uma lista.
+
+Vamos definir uma lista de animais. Para isso, vamos usar a conjunção que vimos antes na /multiplicação de tipos/,
+e expressar nossa lista como uma tupla recursiva:
+
+#+BEGIN_SRC elixir
+  @type animal() :: :gato | :cachorro | :hamster | :peixe | :galinha
+  @type lista_de_animais() :: {} | {animal(), lista_de_animais()}
+
+  meus_bichos = {:gato, {:hamster, {:peixe, {:peixe, {:peixe, {:peixe, {}}}}}}}
+#+END_SRC
+
+Vejamos que não precisamos nos restringir ao tipo ~list()~ nativo do Elixir para definir nosso tipo.
+Não é o tipo de coisa que utilizaríamos em um projeto em produção, é claro: para isso,
+é sempre recomendado utilizar o padrão estabelecido pela comunidade. Mesmo assim, o que esses tipos representam é fundamentalmente a mesma coisa
+-- um tipo algébrico recursivo definido pela conjunção de um elemento a uma lista de elementos.
+
+#+BEGIN_SRC elixir
+  [:gato, :hamster, :peixe, :peixe, :peixe, :peixe]
+  #é o mesmo que
+  [:gato | [:hamster | [:peixe, [:peixe | [:peixe | :peixe | []]]]]]
+  #que não é muito diferente de
+  {:gato, {:hamster, {:peixe, {:peixe, {:peixe, {:peixe, {}}}}}}}
+#+END_SRC
+
+Outro exemplo de um tipo recursivo é a árvore binária, que pode ser definida como: 
+#+BEGIN_SRC elixir
+  @type planta() :: {} | :folha | {planta(), planta()} 
+
+  grama = :folha
+  muda = {:folha, :folha}
+  arbusto = {
+      {
+          :folha, {
+              :folha, {
+              :folha, 
+              {}
+              }
+          }
+      },
+      :folha
+  }
+#+END_SRC
+
+No exemplo, nosso tipo ~planta()~ não é muito útil, porque não nos permite registrar nada além de folhas.
+Mas o poder expressivo desse tipo fica claro se percebermos que o tipo /folha/ poderia ser qualquer outro tipo, simples ou complexo.
+
+* Observação sobre os exemplos em Elixir
+Antes de concluir, vale adicionar uma nota sobre a relevância deste assunto no contexto da linguagem de programação Elixir
+e do ecossistema Erlang. Ambas as linguagens são dinamicamente tipadas e, desta forma, a verificação de tipos de dados ocorre
+em tempo de execução. Isso significa que, em geral, as especificações de tipos servem mais para documentar o código
+do que efetivamente restringir a execução, garantir a correção e acusar erros. Desta forma, o entendimento de tipos de dados algébricos
+não é tão indispensável para a programação como no caso de linguagens estaticamente tipadas.
+Mesmo assim, optamos por utilizar o Elixir para os exemplos pela familiaridade e gosto pelo linguagem.
+
+Precisamos ainda dar os devidos créditos. Este artigo é inspirado na apresentação do programador e matemático Bartosz Milewski,
+a propósito de tipos algébricos e sua representação na linguagem C++.
+A apresentação é de 2018, e pode ser vista [[https://www.youtube.com/watch?v=LkqTLJK2API][clicando aqui]].
+
+Neste artigo, vimos como é possível expandir nossa capacidade de representar informações por meio da compreensão dos tipos de dados algébricos,
+que nos permitem compor tipos singulares em tipos mais complexos e expressivos. Vimos, ainda, como certas estruturas que já conhecemos são,
+fundamentalmente, expressões dessa álgebra de tipos de dados.
+
