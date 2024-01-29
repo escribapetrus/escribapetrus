@@ -1,0 +1,62 @@
+#+TITLE: My Planner
+#+AUTHOR: P. Schreiber
+
+* Programming
+These are the programming projects I am currently working on or plan on working on:
+
+** TODO Poetry Bot (rework)
+The Poetry Bot I created a long time ago is no longer active.
+I should reactivate it.
+
+** TODO Graph Stats
+Graph Stats is an exercise about distributed systems written in Erlang.
+I have done some parts of it, but I still have to work on delivering the results
+and writing the article.
+
+- concurrent solution
+- distributed solution
+- article
+  
+** TODO OAuth Authorization
+After reading OAuth in Action, I want to write a small system that does oauth authorization,
+consisting of:
+
+- client
+- user repository
+- protected resource
+
+** TODO OAuth Authentication and Open Id Connect (OIDC)
+After reading OAuth in Action, I want to write a small system that does user authentication
+using oauth and the oidc protocol.
+
+** TODO Stonks (rework)
+I no longer have a reliable stock screener. I should work on that,
+and maybe add a nice twitter bot to it.
+
+* Reading
+These are the books and texts that I plan on reading this year
+
+** TODO Aeneid
+Classic epic poem about the founding of Rome.
+
+** TODO Zero-Trust Networks
+Technical book about internet security.
+
+** TODO The Divine Comedy
+Classic Poem about the poet's journey into hell.
+
+* Writing
+These are the writing projects I am working on, or plan to work on.
+
+** TODO Chant for Leto
+An elegiac poem about a house that fell into ruins after the death of a man's wife.
+
+** TODO Cytherea
+A poem about a girl.
+
+* Other stuff
+Other stuff to work on.
+
+** TODO MM Podcast
+Podcasts about music, books, films
+
