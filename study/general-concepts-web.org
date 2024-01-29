@@ -1,0 +1,19 @@
+#+TITLE: General concepts and questions about the web
+
+* What is the difference between URL and URI
+
+* What is the difference between HTTP1.1 and HTTP2
+
+* What is a JWT
+
+* What is a CSRF attack
+
+* What is CORS
+
+* What is Cross-Site Scripting attack (XSS)
+
+* Explain JWT protection:
+** Hashing
+** HMAC Signing
+** RSA Signing
+** Encryption

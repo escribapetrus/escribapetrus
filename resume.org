@@ -1,45 +1,53 @@
 #+OPTIONS: toc:nil num:nil
 
 * Pedro Schreiber
-schreiber.mmb@gmail.com | +55 11 997612304 | https://github.com/escribapetrus
+schreiber.mmb@gmail.com | +5511997612304
 
 ** SUMMARY
-*Software engineer with 5 years of experience* developing different aspects of computer systems and web applications. Some of my experience includes:
+*Software engineer with 5 years of experience* developing different aspects of computer systems and web applications.
 
 - Backend development with languages and frameworks like *Elixir/Phoenix, Javascript/Node, Python/Django/Flask*,
-  providing *REST and GraphQL APIs* for web applications and services
+  providing *REST and GraphQL APIs* for web applications and services;
 - Frontend development with the vanilla stack of *HTML, CSS and Javascript*, frameworks like *React, Vue, Bootstrap*,
-  and tools such as *SASS and Typescript* 
-- Database systems, such as *MySQL, PostgreSQL, Redis, MongoDB*
+  and tools such as *SASS and Typescript*;
+- Distributed systems architecture and asynchronous jobs processing, with *Apache Kafka, Rabbit MQ, and AWS Lambda*;
+- Database systems, such as *MySQL, PostgreSQL, Redis, MongoDB*, and caching with *Redis*.
 - Cloud and infrastructure for deploying applications to AWS, using services like *EC2, ECS, Fargate, S3*,
-  and tools like *Docker, Kubernetes and Terraform*.
-- *Object-Oriented Programming*, with a solid *understanding of patterns* and languages like Javascript, Python
-- *Functional programming languages*, with practical and theoretical understanding of concepts and languages like Elixir, Erlang, Haskell, and Lisp.
+  and tools like *Docker, Kubernetes and Terraform*;
+- *Object-Oriented Programming*, with a solid *understanding of patterns* and languages like *Javascript, Python, Ruby*;
+- *Functional programming languages*, with practical and theoretical understanding of concepts and languages
+  like *Elixir, Erlang, Haskell, and Lisp*.
 
 ** EXPERIENCE
 
 *** Stone - software engineer 2022 - current
 
-Developed an Elixir application that delivers notifications (email, sms, push, webhooks) to millions of users
-and applications daily through *asynchronous processing of Kafka events*.
-Developed client account systems using *UML data diagrams and Phoenix REST APIs*
-to structure and manipulate the PostgreSQL database.
+Developed an application that delivers notifications (email, sms, push, webhooks) to millions of users
+and applications daily, through *asynchronous processing of Kafka events*, with configurable
+message templates and file attachments.
+
+Developed account authentication and authorization systems, providing user registration
+based on *UML data diagrams and REST APIs* to structure and manipulate the database,
+and *OAuth 2.0 protocol-compliant tokens with cryptographic signature and encryption*.
 
 STACK: *Elixir, PostgreSQL, AWS, Docker, Kubernetes, Apache Kafka, React*
 
 *** Árvore - software engineer 2021 - 2022
-Developed an Elixir application that provides a digital library for schools,
-with an *MVC architecture* and complex modeling of user groups and levels.
-Integrated the React frontend with the Phoenix and MySQL database backend
-by writing *GraphQL and REST APIs*.
+Developed an application that provides a digital library for schools,
+with an *MVC architecture* and complex modeling of user groups and levels, and *GraphQL and REST APIs*
+to integrate the React web and mobile frontends with the MySQL database backend.
+
+Led the technical support team, with the responsibility of investigating and fixing problems
+with user accounts and system features, mostly by checking system logs
+and correcting inconsistencies in the database.
 
 STACK: *Elixir, Ruby on Rails, PHP, React, MySQL, PostgreSQL, AWS, Docker, Kubernetes*
 
 *** HavasPlus - software engineer 2020 - 2021
 
-Developed the website for the telecom company TIM.
-Modernized a legacy system to allow dynamic data rendering,
-by implementing a database backend and *Vue components written in Typescript*.
+Developed the website for the telecom company TIM, and modernized a legacy system
+to allow dynamic data rendering, by implementing a database backend
+and *Vue components written in Typescript*.
 
 STACK: *Typescript, Vue, HTML, SASS, Node*
 
@@ -71,7 +79,11 @@ STACK: *HTML, Wordpress*
 ** LANGUAGES
 
 - *Portuguese* native/proficient
-- *English* fluent/proficient, Cambridge CPE certified)
+- *English* fluent/proficient
 - *French* intermediate
 - *Spanish* intermediate
 
+** COURSES AND CERTIFICATIONS
+
+- Senac - Introduction to Computer Hardware and Technical Maintenance (2008)
+- University of Cambridge - Cambridge English: Proficiency (C2)
