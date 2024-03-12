@@ -33,6 +33,10 @@ using oauth and the oidc protocol.
 I no longer have a reliable stock screener. I should work on that,
 and maybe add a nice twitter bot to it.
 
+** TODO White Tower
+A console RPG game. I dropped this because I did not want to write the stories.
+Now, I realize I can generate all the content from ChatGPT
+
 * Reading
 These are the books and texts that I plan on reading this year
 
@@ -42,8 +46,17 @@ Classic epic poem about the founding of Rome.
 ** TODO Zero-Trust Networks
 Technical book about internet security.
 
+** TODO Rust in Action
+Technical book about the Rust programming language.
+
 ** TODO The Divine Comedy
 Classic Poem about the poet's journey into hell.
+
+** TODO System Design Interview
+
+** TODO Entendendo Algoritmos
+
+** TODO Cracking the Coding Interview
 
 * Writing
 These are the writing projects I am working on, or plan to work on.
@@ -53,6 +66,14 @@ An elegiac poem about a house that fell into ruins after the death of a man's wi
 
 ** TODO Cytherea
 A poem about a girl.
+
+* Courses
+
+** TODO IBM Courses [[https://skillsbuild.org/adult-learners/explore-learning/cybersecurity-analyst][Cybersecurity Analyst]]
+
+** TODO IBM Courses [[https://skillsbuild.org/adult-learners/explore-learning/data-analyst][Data Analyst]]
+
+** TODO IBM Courses [[https://skillsbuild.org/adult-learners/explore-learning/artificial-intelligence][Artificial Intelligence]]
 
 * Other stuff
 Other stuff to work on.

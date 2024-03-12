@@ -1,0 +1,185 @@
+#+TITLE: 15 Albums for programming
+#+AUTHOR: P. Schreiber
+
+Moods:
+
+- Powering through
+- Hyped focus
+- Searching for inspiration
+
+* Searching for inspiration
+
+These are albuns for when you know what you need to do, but you still need
+to discover how to do it. You want inspiration, and this is exactly what they
+are here to provide
+
+** TODO "Stone Flower", Antônio Carlos Jobim
+
+Widely recognized as the greatest composer of Brazilian music, every album of Antônio Carlos Jobim's
+discography is worth the listen, as an exploration of the wide range of his musical creativity and influence
+in the most varied genres: samba, bossa nova, jazz, classical music, and more.
+
+"Stone Flower", released in 1970, features some of Jobim's classic songs in orchestral arrangements that
+elevate even higher the already esteemed sounds of bossa nova and jazz. It is a mostly instrumental,
+elegant, and joyful record.
+
+- Highlights :: Sabiá, Brazil
+  
+
+** "Peer Gynt", Edvard Grieg
+
+It is a little scary to talk about classical music, as its aura produces such awe and the fear of blasphemy.
+But let me try, if only to inspire readers to try this great record.
+
+"Peer Gynt" was composed around 1970's by Edvard Grieg as a musical accompaniment (a soundtrack, so to speak)
+to the play by Henrik Ibsen, and later worked into a standalone musical suite. The music has a distinct dramatic
+and narrative sound, and the listener can really feel immersed in the different settings of the story that is being told:
+a story of dangerous adventures in distant lands.
+
+Each track in the suite paints a distinct picture, and it is very /album-like/ in this sense. Some give
+the vibe of the idyllic Norwegian countryside village, while others present the otherworldly setting of
+fairy tales, magical woods and eerie dungeons.
+
+While this is not my favourite work by Grieg (that would be the magnificent Piano Concerto in A Minor),
+it is a truly pleasant and fun listen.
+
+** "The Inner Mounting Flame", The Mahavishnu Orchestra
+
+The 1971 debut record of John McLaughlin's Mahavishnu Orchestra is a turning point in modern music,
+stretching the limits of the avant-garde music explorations initiated by Miles Davis' jazz fusion classic Bitches Brew.
+The band applies unparalleled technical prowess to the most different sounds, with influences from Eastern and Western
+music, to create a truly spiritual experience.
+
+Take, for example, "A Lotus on the Irish Streams". Luckily for us, the name of the track gives us a hint of what to expect:
+it is a mix of celtic folk, beautifully led by the melody of the violin, with some Indian-sounding guitar reminiscent of a sitar.
+I have to admit that it can be hard to grasp what is happening sometimes, when everything in this record is so fast
+and crazy. But there are beautiful moments, such as the aforementioned track or the contemplative and "You Know, You Know".
+
+To some people, this record may sound extremely self-indulgent. But if you like to hear
+some crazy guitar shredding, insane drums, that kind of stuff, give this one a try.
+
+- Highlights :: Meeting of the Spirits, Vital Transformation, You Know, You Know
+
+
+* Powering though
+
+When programming, sometimes what we need is a boost of energy, some nurturing
+of our will to exist, in order to power through challenging tasks.
+
+This is a list of albums for when you want to code while headbanging,
+playing air drums and singing (or growling) loudly.
+
+** "Blackwater Park", Opeth
+
+The sheer brutality of this record is almost unmatched, even when
+we talk about metal music. Even in the first moments of "The Leper Affinity",
+this album throws the listener into an absolute maelstrom of dark matter.
+
+This is the prime example of progressive death metal, taking inspiration in the
+inventiveness of progressive rock giants such as King Crimson or Genesis, and
+applying that to the technically challenging and insanely fast sound of death metal.
+By using a mix of weird scales and odd tempos, the band achieves such face-melting
+riffs unheard since the times of the first Black Sabbath albums.
+
+- Highlights :: The Leper Affinity, The Drapery Falls
+
+** "Saosin", Saosin
+
+Arguably one of the best albums in the post-hardcore genre, this album is
+an unbroken string of bangers from start to finish.
+
+The guitar work is beautiful, with thick riffs and fast arpeggios,
+tastefully mixed to sound not like pretentious guitar metal,
+but balanced, impressive, and super cool.
+
+The singing does away with the violent growls that are a staple of the
+/screamo/ genre, which can sound too harsh or tiresome for some people,
+and rather focuses on high-pitch screams on the livelier passages. The
+lyrics are much clearer than the arcane verses of previous iterations of this
+band, making them super catchy and making the listener feel in a concert,
+screaming, /"We speak in different voices!"/ while banging keys on the
+code editor.
+
+- Highlights :: It's Better to Learn, Come Close, Voices
+
+** "Inspiration is DEAD", Ling Tosite Sigure
+
+Ling Tosite Sigure plays a mix of post-hardcore and shoegaze that features
+all the characteristics of both genres, while also presenting a unique
+and immediately recognizable sound.
+
+You can expect to find shoegaze /walls of sound/, intensely distorted,
+delayed and reverbed guitars; also, post-hardcore screaming high vocals,
+fast-tempo guitar arpeggios and insane drum rolls. But what makes this band special is
+that it has so much /character/.
+
+First, the band is a /power trio/, i.e. drum, bass, guitar. This is a perfect
+band formation because you can hear each instrument very distinctly.
+Not having two guitars makes the bass really slap: think Black Sabbath, Rush,
+The Jimi Hendrix Experience.
+
+Second, the vocals are so weird that it may take some time to get used to.
+At first listen it may even sound really bad. But at the same time, they are super cool.
+TK and 345 both sing, and the boy-girl dynamic makes a colourful mix of
+sweet, aggresive, soft and harsh sounds.
+
+- Highlights :: Disco Flight, am 3:45, I Not Crazy Am You Are
+
+
+* Chilling
+
+Different moods are good for different tasks. Sometimes, what we need is to just chill 
+and do what we are confident in.
+
+These are records for when you want to code while vibing and enjoying life, thinking about the
+weekend that is coming.
+
+
+** "No. 4", Serge Gainsbourg
+
+Last year I decided to dive deep in Serge Gainsbourg's discography, and while there is much to talk about
+many of his records, I believe this the masterpiece. No. 4 is a mix of many artistic expressions:
+poetry, jazz, rock, bossa nova, samba, pop.
+
+Though time has made records made in the 60's sound old or /vintage/, this record is incredibly modern and
+forward-driven in its artistic explorations: For example, "Baudelaire" sets the lyrics of XIXth century poetry
+to the sounds of bossa nova and samba, offering a sunny, tropical and sensual take on the words of a poet whose
+work is commonly associated to a sinister aesthetic of dark rooms, smoke and absinthe. Also worthy of note
+are the sick electric organ solos that sound like a weird French precursor to The Doors.
+
+- Highlights :: Black Trombone, Baudelaire, Intoxicated Man
+
+
+** "At Home", Paddy Reilly
+
+"The voice of Ireland", wrote some wise YouTube commenter.
+
+Paddy Reilly, the great guitarist, singer, and one could even say at one point frontman of the legendary band The Dubliners,
+dropped this killer record in 1972. There is no mix of styles here, no avant-garde sound explorations,
+just the purest, most beautiful sound of Irish balladry.
+
+Paddy's voice is powerful and heartwarming, and while marked by a strong and beautiful Irish accent,
+his words are clear, and wraps the listener in the most varied stories, from heroic war songs of rebellion
+to the love stories of whiskey-filled drunks. This is a record that just makes me want to take arms against
+the damned British and die in the arms of my golden-haired maiden.
+
+- Highlights :: The Foggy Dew, Come Out Ye Black and Tans, The Limerick Rake
+
+** "Canta en Español Con Los Panchos", Eydie Gormé
+
+I first heard this record when searching for the original Spanish version of the Dalida song
+"Histoire d'un amour". The Frech version is beautiful in its own term, providing a mix of
+the Latin rhythm of bolero with the melodramatic charm of the /chanson française/.
+But Eydie Gormé's version is superior to my ears for being livelier, more cheerful,
+showing, even if the lyrics are sad, the inherent beauty of a love story.
+
+The 1964 record is a collaboration between the American singer and the Mexican trio,
+and is a beautiful display of the warm and colourful charm of Latin American music.
+Eydie Gormé's voice is soft, sweet, and elegant, with the perfect dose of drama (a character that
+can sometimes be excessive in such a genre as bolero), and a clear and charming accent. Los Panchos'
+guitars are expressive, sharp, and act like singers themselves.
+
+This is definitely a record to put us in a good mood, reminding us of warmth, sunshine, dancing, love,
+and other joys of life.
+
+- Highlights :: Historia de un Amor, Quando Vuelva a Tu Lado, Sabor a Mí

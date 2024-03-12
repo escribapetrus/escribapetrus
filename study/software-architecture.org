@@ -1,0 +1,156 @@
+#+TITLE: Notes on Software Architecture
+#+AUTHOR: P.Schreiber
+
+* System Design Interview, Alex Xu
+
+** Chapter 1: Scale from zero to millions of users
+
+*** Single server setup
+
+In a single server client-server architecture setup, the client (e.g. web browser)
+requests a domain name to the DNS (domain name server) and receives the server IP address.
+Then, the client sends a request to the server, which responds with the page content.
+
+**** Server-side languages (backend)
+
+Server-side languages and applications receive and respond client requests, and apply
+business logic.
+
+Examples: PHP, Java
+
+**** Client-side languages (frontend)
+
+Client-side languages render data on the client.
+
+Examples: HTML, CSS, Javascript
+
+*** Database
+
+Separating the web server and the database server allows us to scale them separately.
+Now, the web server acts as a client, and the database as a server.
+
+**** Relational databases
+
+Relational databases represent and store data in tables and rows, which can be joined
+and filtered.
+
+This is usually the best and safest choice for any architecture.
+
+Examples: MySQL, Oracle Database, PostgreSQL
+
+**** Non-relational databases
+
+Non-relational databases (noSQL) are not structured as tables,
+and usually do not provide join operations.
+
+They are usually used because of requirements such as:
+- low latency;
+- unstructured data
+- massive amount of data
+- unrelated data
+
+The main types of non-relationaal databases are:
+- key-value stores
+- graph stores
+- column stores
+- document stores
+  
+Examples: CouchDB, Neo4j, Cassandra, HBase, Amazon DynamoDB.
+
+*** Types of scaling
+
+**** Vertical scaling
+
+Vertical scaling, or "scaling up", means upgrading the machine, adding more power:
+CPU, RAM, HDD, network bandwith. It is simple, a good option for low traffic.
+
+Drawbacks:
+- fardware limitation :: it is impossible to add unlimited CPU and memory to a single server.
+- failover and redundancy :: if the server goes down, the service becomes unavailable.
+
+**** Horizontal scaling
+
+Horizontal scaling, or "scaling out", means adding more machines (servers)
+to the pool of resources. It is better for large scale applications.
+
+*** Load Balancer
+
+A load balancer is a server application which forwards and evenly distributes network requests
+from clients to servers in a /load-balanced set/. Users connect to the load balance's public IP.
+For better security, servers communicate using private IPs.
+
+Load balancers solve the _failover_ issue, and provide better _availability_:
+
+- If server 1 goes down, the load balancer routes the traffic to server 2
+  while the infrastructure is provisioned with a replacement;
+- It the traffic grows rapidly, more servers are added to handle the load.
+
+  ** Database Replication
+
+Database replication is used to solve the problems of failover and redundancy in the data layer.
+The cluster is usually structured in a _master/slave relationship architecture_.
+
+The _master database_ (1, but not necessarily) supports only write operations.
+The _slave database_ (n) supports only read operations, which are much more common.
+
+Advantages:
+- performance :: read operations are distributed across slave nodes,
+  allowing requests to be processed in parallel;
+- reliability :: data is preserved even in the case of crashes or data loss;
+- high availability :: the service remains online even if one server is offline.
+
+Requests to dead slave databases are redirected to the other slaves databases
+(or to the master if necessary) while new replicas are provisioned.
+If the master database goes down, one of the slaves has to be promoted to master.
+
+**** TODO Explain how a master is selected, promoted, and updated with missing data.
+
+*** Cache
+
+Cache is a temporary storage for expensive and/or frequently accessed data,
+so that requests are served more quickly. Cache is meant for data which is
+accessed frequently, but modified infrequently. It is stored in volatile memory,
+and should not be used for persistence.
+
+The _key-value store_ is a frequent model for cache servers, such as Redis
+and Memcached.
+
+Advantages:
+- provide better system performance
+- reduce database workloads
+- scale independently
+
+Considerations:
+- expiration policy :: once cached data is expired, it is removed from cache.
+  without expiration date, data may be stored in memory permanently, taking up
+  valuable space. Expiration date should not be too short so as to raise database load,
+  nor too long so as to cause data to become stale;
+- consistency :: data on the database and the cache may become inconsistent, as it
+  may not be stored in a single transaction;
+- mitigating failures :: a single cache may represent a single point
+  of failure (SPOF). Multiple cache servers across different data centers
+  are recommended;
+- eviction policy :: data may be deleted from store if the cache is full according to
+  the eviction policy, e.g. /least-recently used (LRU)/, /First In First Out (FIFO)/.
+  
+**** Read-through caching strategy 
+A web server that receives a request first checks if the data is present in the cache.
+If it is, it is sent to the user; otherwise, the server queries the database,
+stores the data in the cache and then sends it to the user.
+
+**** TODO Describe other caching strategies
+
+*** Content delivery network (CDN)
+
+CDN is a server or cluster of servers that store and deliver static content (files),
+e.g. images, CSS, Javascript files. It serves a function similar to caches.
+
+Considerations:
+- cost :: CDN providers charge by store operations, and should be used for
+  frequently accessed data;
+- expiration date :: if too long, data may be stale, and if too short,
+  may cause frequent fetches from origin;
+- fallback :: as any server, a CDN may crash, in which case the clients
+  should be able to get data from the origin;
+- invalidation :: in case the object becomes stale, it must be invalidated and
+  a new version accessed.
