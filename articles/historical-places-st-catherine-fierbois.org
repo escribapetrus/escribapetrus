@@ -1,0 +1,181 @@
+#+TITLE: Historical Places: Sainte-Catherine-de-Fierbois
+#+AUTHOR: Pedro Schreiber
+
+The Loire Valley, in Central France, is a region most famous for its castles and vineyards,
+which make it the perfect destination for the history enthusiast.
+There are colossal stone fortresses every few miles along the Loire River,
+and cities built around great cathedrals, like Orléans and Tours,
+where even the ground and the walls seem to tell many a story
+from their centuries of existence.
+
+But historical significance--or should I say interest-- of places
+is often not measured in the height of the constructions and extension of the city map,
+but rather in the grandeur of events which in they took place,
+or how they survive in the people’s memory, in historical records, stories, myths,
+legends, folklore. Such a great impression such events cause, that they are never forgotten,
+and may make a small village of a handful of families richer than a city of tens of thousands.
+
+* Stories of the Loire Valley
+
+Some seven leagues (that is, 35 km/20 miles) south of the city of Tours,
+the largest city in the old province of Touraine (now department of Indre-et-Loire)
+there is a small village named Sainte-Catherine-de-Fierbois,
+where it is told marvelous events happened. Let me tell how I got there,
+and my impression of it.
+
+I was visiting the city of Chinon, in Central France, to see the Forteresse Royale de Chinon,
+the castle in which history tells us Joan of Arc
+met the dauphin -- later the king Charles VII-- before venturing into Orléans
+for the quest of raising the siege. I was staying with a French gentleman named Michel,
+who kindly offered me a bed in his comfortable house in exchange of company
+and some Brazilian cooking (sorry it wasn't as delicious as you deserved, my friend!). 
+
+Now this gentlemen was an experienced traveller, having been all around the world.
+A proud socialist, he told me about the time when he visited my continent, just as I was visiting his,
+to take a journey on the footsteps of Che Guevara, his hero. He was curious about
+my interest in Joan's campaigns, and I told him about the places I had been to and where
+I planned to go next: Rouen, Orléans, Chinon, Paris, Domrémy--begin at the end, end at the beginning.
+Three special places were left out of my travel map, though, for lack of time:
+Reims, where the coronation of Charles VII took place, Compiègne, where Joan was captured,
+and the small nearby village of Sainte-Catherine-de-Fierbois.
+
+* The Legend of the Sword
+
+
+This village is known for the marvelous story of the sword of Joan of Arc.
+While at the dauphin's court of Chinon, the Maid was given a shining armour
+and a gold-embroidered white banner. But she wouldn't take a sword from the dauphin's armory;
+instead, she would require her sword came from heaven. Only such a weapon would be able to
+unite the realm and revert the tide of war, raise the siege of Orléans and achieve the coronation
+of the rightful king of France.
+
+The Voices--that is, Saint Catherine and Saint Margaret--instructed Joan to send for the sword
+buried by the altar of the chapel, and that its blade would be marked by five crosses near the crossguard.
+A courier was sent with these instructions on a letter to the priests, dictated by Joan.
+Loyal to the Armagnac cause and believers of the Maid's mission, they had the floor excavated,
+and inside a chest the sword was found, with a torn scabbard and a thin layer of rust on the blade.
+After a light polish, the markings of the five crosses revealed themselves.
+
+Though there were many swords in the sanctuary, left by pilgrim soldiers vowed to Saint Catherine,
+none had ever seen this sword; therefore, it was counted as another of the Maid's miracles.
+When I told Michel about the story, he was surprised that he had never heard about it,
+nor about the place; so we did some quick research on the internet.
+I told him that the sword buried therein was the sword of Charlemagne, that Joan carried to battle.
+I must had read that maybe in Mark Twain's Recollections, or maybe in the Age of Empires II game.
+I was mistaken. Our research--and later readings--revealed that the village had in fact nothing
+to do with with Charlemagne, but rather with his grandfather Charles Martel.
+
+Anatole France writes:
+
+#+BEGIN_QUOTE
+"The story of this sword spread, swollen with strange fables.
+It was said to be the sword of the great Charles Martel, long asleep underground.
+Many thought that it was the sword of Alexander and the heroes of old.
+All men held it good and fortunate." (Vie de Jeanne d'Arc, vol. I)
+
+[L'histoire de cette épée se répandit au loin, grossie de fables étranges.
+C'était, disait-on, l'épée, longtemps endormie sous terre, du grand Charles Martel.
+Plusieurs pensaient que ce fut l'épée d'Alexandre et des preux du temps jadis.
+Tous la tenaient bonne et fortunée.]"
+#+END_QUOTE
+
+* Origin: The Battle Of Tours-Poitiers (AD 732)
+
+Fierbois stands for "ferus bocus", or wild woods. This is how the place was reported
+to be before its foundation, and remains of the forest can still be seen in the southern border
+of the village. It was in these lands between Tours and Poitiers that the commander
+of the Frankish armies fought the Saracens who had conquered the Iberian Peninsula,
+defeated the armies of the Visigoths and, crossing the Pyrenees, waged war to expand
+the Islamic Caliphate into Francia. They had had victory in Aquitaine and Nimes,
+but here they were overthrown by the hand and leadership of Charles Martel, the Hammer.
+
+The battle is known as Battle of Tours, or [First] Battle of Poitiers
+(the second being a part of the English victory streak in the Hundred Years War).
+It is deemed by the historians as a defining moment in European history:
+for in that moment the Caliphate’s expansion was stopped in Central Europe.
+Being the greatest military power in Europe at the time, defeat of the Frankish army
+could have meant the triumph of Islam over Christianity and the spread of its teachings
+from Arabia to northern England. On this, Edward Gibbon wrote:
+
+#+BEGIN_QUOTE
+"A victorious line of march had been prolonged above a thousand miles from the rock of Gibraltar
+to the banks of the Loire; the repetition of an equal space would have carried the Saracens
+to the confines of Poland and the Highlands of Scotland; the Rhine is not more impassable
+than the Nile or Euphrates, and the Arabian fleet might have sailed without a naval combat
+into the mouth of the Thames. Perhaps the interpretation of the Koran would now be taught in
+the schools of Oxford, and her pulpits might demonstrate to a circumcised people the sanctity
+and truth of the revelation of Mahomet."
+(The Decline And Fall Of The Roman Empire, Chapter LII)
+#+END_QUOTE
+
+It is told that it was by grace of Saint Catherine--who was a patron of soldiers--
+that victory was seized at Tours-Poitiers; that Charles Martel ordered the construction of a
+sanctuary in her name, and therein buried his sword as an offering.
+As the legend of the Maid of Orléans grew, it became a custom to say it was Charles' sword,
+blessed by Saint Catherine, that she found and carried into battle some seven centuries later,
+to once again achieve victory against invaders of the kingdom of France. It is an extraordinary tale,
+full of passion and wonder, no matter which parts are fact and which are fiction.
+
+* Visiting the village
+
+On my second day at his house, Michel and I drove to Sainte-Catherine-de-Fierbois.
+It was early summer, and in the afternoon the sun shone brightly upon the green hills.
+The sky and the grass aside, all one sees in this part of the world are vineyards,
+which at this point were only starting to grow, far and wide.
+
+The road from Chinon led us straight into the main street, and to the central square,
+the Place des Anciens Combattants, before the church. It is very small village--quick research
+reveals a population of no more than 750. The outsides of the buildings were the colour of wheat,
+which added to the green colour of the landscape gave a great feeling of peace. There were other visitors.
+An elderly couple riding bicycles caught our attention: they had seashells tied to the handlebar;
+signs of the pilgrimage of Saint James. Many reasons, I reckoned, may bring seekers to a place like this. 
+Just like in Orléans, Chinon, and other places featured in the stories, there was an iron statue of Joan,
+some one-hundred metres from the entrance of the church, clad in armour, carrying the banner,
+with a sword by the waist.
+
+The architecture of the church is remarkably beautiful for a such a small village,
+especially in the west façade. The portal is a tall pointed arch of unmistakable French gothic style,
+yet the three rectangular windows and the rectangular wooden door give it a humble look--venerable
+but not sumptuous--which fits the countryside well. It is worth noting that the current church,
+as it stands, is not the same as the one wherein Joan attended mass.
+It is a XV century reconstruction of the old chapel that burned down,
+commissioned by a priest and admirer of the Maid who testified in the Rehabilitation Trial.
+Crossing the red doors of the portal, the eyes are immediately attracted to the three pointed-arched
+stained glass windows of the apse, the furthest point of the church.
+
+The right side of the transept is solely dedicated to Saint Catherine.
+Below a beautiful painting of the martyr, there is a painted wooden statue;
+it is reported to be very old, though it is unclear whether this is the same as the one
+before which Joan knelt in prayer. I picked a coin from my pocket, put it in the offerings box,
+and lit a candle, while Michel walked around the church. He called me, and I saw an opening on the wall;
+above it a sign read, "Ici fut trouvée l'épée de Jeanne d'Arc" [Here was found the sword of Joan of Arc].
+
+I walked towards apse, where the altar stood. On the left wall was hung a sword,
+representing the one that here was found, that legends say was the sword of Charles Martel.
+Or maybe it was a reminder of the pilgrims who left their arms in the sanctuary of their patron saint.
+Looking to the right, I saw a small opening on the wall, as low as my knees.
+Its interior was dark, protected by a thick blurry glass. There was a grey tube inside,
+made of metal and strangely shaped, with a small glass window that displayed...not much.
+A thin stripe of decayed paper behind the glass revealed its contents: a holy relic,
+a phalanx of Saint Catherine of Alexandria herself. I was surprised not to have read about this.
+I had a weird feeling: despite going along with stories of magical swords and prophecies,
+now my suspension of disbelief was being forced a little too much.
+I started to question whether the journey was not a silly thing:
+it could have been that there never was  a Catherine of Alexandria, a saint, a buried sword,
+miracles, and prophecies. What was the point of those stories if they were false?
+
+I still do not have a clear answer to that question. But what I do know is that the value of stories
+lies not in whether they are fact or fiction, and is not a matter of belief.
+It must lie somewhere else; in how they stir people's hearts,
+survive and are transformed in the course of time. The three stories of Saint Catherine,
+Charles Martel and Saint Joan are interweaved as the centuries pass,
+making out of a small countryside village a treasure of history and imagination.
+
+* More information
+http://www.experienceloire.com/sainte-catherine-de-fierbois.htm
+https://commons.wikimedia.org/wiki/Church_architectural_elements
+http://montjoye.net/sainte-catherine-de-fierbois
+http://www.litteratur.fr/communes-de-touraine/sainte-catherine-de-fierbois/2/
+
+
+

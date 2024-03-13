@@ -1,0 +1,135 @@
+#+TITLE: Difficulties in translating the music of English medieval poetry to Portuguese
+#+AUTHOR: Pedro Schreiber
+
+#+BEGIN_VERSE
+ȝef þou me lovest ase men says lemmon as and wene,
+Ant ȝef hit þi wille be þou loke þat hit be sene,
+So muchel and þenke upon þe þat al and waxe grene.
+#+END_VERSE
+
+On a day of inspiration, I decided to translate to Portuguese an English medieval poem
+I had heard as a song: the famous When the Nightingale Sings, from the Harvey Lyrics collection
+(14th century). In fact, though our experience today be quite different -- poetry has become
+silent literature, much because paper and ink have no voice -- in antiquity it would not have been incorrect
+to say that poetry and music are one and the same. It is no wonder that in the Japanese language
+the same word "uta" 歌 describes both song and poem at the same time.
+
+Four elements are immediately picked up by the ears upon reading the poem aloud.
+They bring out the music that serves as a medium that leads us, as in a trance,
+to the world described in the words of the poem. They are: the pronunciation of medieval English;
+rhythm (metric and tonic sylables); alliteration; rhymes. Although it is not difficult
+to translate the meaning of words and reveal the stories and themes about which the troubadour sings,
+importing these musical elements into Portuguese is a great difficulty.
+It is worth looking at each carefully, inspecting them, and attempting to answer
+whether it is possible to produce a version that lives up to the troubadour's song,
+or if it would be better to give up on that intention, instead leaving the musical elements
+only in the original text. The translation, in this case, would serve as no more
+than a guide for the reader who, having some knowledge of the English language,
+wished to read and understand the ancient poetry, and not be a poem with its own dignity.
+
+In that sense, the question is raised: is it possible to translate the poem as song,
+that is, the poetry of the medieval troubadour?
+
+Medieval English does not sound like modern English. Modern English is fast and direct;
+the medieval, plastic, pulsating, the syllables are more prominent, the vowels are stronger.
+The former is an urban waterway; the latter, a mountain river. Just compare the verses at the
+beginning with the modern translation of the same poem:
+
+#+BEGIN_VERSE
+"If you love me as they say, sweetheart, as I believe,
+And if it is your will, make sure it is openly known.
+I'm constantly thinking about you that I become all pale. "
+#+END_VERSE
+
+It may well be an effect of how strange the ancient language sounds,
+in contrast with the familiarity of the new. Nevertheless, it is remarkable how it the modern
+is clearer, more uniform and precise; the passing of the centuries and the age of rationalism
+gave occasion to a logical understanding on the languages, the development of a grammatical science,
+which transformed the complex mix of Germanic, Latin and Frankish elements into what it is today:
+a modern, global language.
+
+The inversion I lovest, the pronoun y sometimes written ich are some examples of instances
+in which the writing of the old language is irregular. The same occurs in the following verses
+of the poem An Autumn Song, from the same collection, in which the word Lady is written in distinct ways:
+
+#+BEGIN_VERSE
+Ne is no quene so stark ne stour,
+Ne no levedy so bryht in bour,
+That ded ne shal byglyde.
+Ledy, preye thi sone for ous,
+That us duere bohte,
+Ant shild us from the lothe hous
+That to the Fend is wrohte!
+#END_VERSE
+
+Translating the metrics may not be at the top of the list of difficulties,
+it's true, but it's also not without effort. This is because English is a leaner language
+- in sound and in spelling - than Portuguese. Anyone watching a subtitled movie can realize this:
+  for a short speech of a few syllables, two lines of caption text.
+  
+This difference means that it is necessary to cut letters, syllables, words for the verse to fit.
+And, since words are not empty sounds, each cut is a loss. Each one must express the maximum of meaning;
+there can be no waste within the seven (e.g.) units of each verse.
+
+The rhythm of the poem is like the sound of the drums or the steps of a dance,
+which progresses through repetition and regularity. Each occurrence reaffirms the music,
+the story, and the feeling the words carry, and puts the mind in a trance that takes the listener
+ver further into the world of the poem.
+
+This trance caused by repetition--not only of rhythm, but of sounds themselves--is further accentuated
+by the presence of alliteration.
+
+Alliteration is a stylistic mark not so common in Portuguese poetry, it seems to me.
+But in the Anglo-Saxon, Nordic and Germanic traditions, it has been an element of the utmost
+importance since the time of the epics like Beowulf. Note how the repetition of vowels and consonants
+gives a wonderful effect to the verse:
+
+#+BEGIN_VERSE
+Whil and lyve in world so wyde oþer nulle and seche.
+#+END_VERSE
+
+The repetition of the vowels (i, o) and consonants (w) in the alliterative verse
+seems even a musical scale, in which some singular notes are detached from the whole set of twelve notes
+(chromatic scale), sounding with greater intensity. Or it is like a picture of few colors,
+too, in which each one is much more shocking than if it were painted with all the colors of the rainbow.
+
+In rhymes is perhaps the greatest difficulty at the time of translation.
+This is because, while English is a language without many verbal inflections and no gender bending,
+Portuguese, heir to the very difficult Latin, is the opposite.
+
+Look at the four verses of rhyme b of the second stanza of A Song of Autumn;
+four verbs with the same termination, but of very different configurations
+regarding the person and verbal time.
+
+#+BEGIN_VERSE
+On my folie and thohte
+Of merci hire bysohte
+That us duere bohte To the Fend is wrohte.
+#+END_VERSE
+
+Translating verbs directly into Portuguese, we would have two in the perfect past tense
+of the first person singular (I thought, supliced, besought), one in the perfect past tense
+of the third person singular (bought, bought), and one in the participle (constructed, wrought).
+Three forms with distinct sounds in Portuguese, but which rhyme perfectly in English.
+
+As you would expect from a song, in which rhymes are essential, the same situation repeats
+itself hundreds of times.
+
+The difficulties posed by metrics, alliterations, and rhymes give us the opportunity to ask whether,
+in attempting to import such elements from medieval English into Portuguese, the amendment
+would not be worse than the sonnet; if it would not be more fruitful to look only at the message,
+the story told, the feelings represented.
+
+However, if we think that it is these elements that make up music, and that it is essential to the poem,
+because it directly affects the soul, the passions, and leads the mind to other places, other times,
+other lives, it will be evident that no.
+
+Even if it is inevitable to lose a few little bits along the way - words, sounds, rhythms,
+even certain images and metaphors - it seems that this effort to try to get as close as possible
+to both the song and the meaning of the troubadour's words is the redeem your art.
+Tradition is not, after all, lyrical; Does not accompany words of music? The sermon, then,
+let us leave it to the priest. To the poet, return the lyre.
+
+To translate medieval poetry is to honor the memory, the art and the feeling of the troubadour,
+so that it is not forgotten. The troubadour whose song is sung lives forever, even after his death.
+
