@@ -1,0 +1,202 @@
+#+TITLE: Notes on Algorithms and Data Structures
+#+AUTHOR: P. Schreiber
+
+* Definition of algorithms
+
+Algorithms are sequences of actions performed to get a specific result
+or solve a problem. It is the description of a behavioral pattern,
+expressed in terms of a finite number of actions.
+
+** Mathematical induction
+
+Mathematical induction is a technique used formally describe algorithms,
+by asserting that some statement is valid for any natural value.
+
+- base case :: the statement must be valid (true)
+  for an initial value;
+- induction step :: if the statement is valid
+  for the first n iterations, it will also be
+  for the n+1 iterations.
+
+** Sum operator
+
+The sum operator is another mathematical element used to describe
+computer algorithms. For example, the sum of 1, 2, ..., n
+can be represented as: \sum^{n}_{j=1} a_{j}.
+
+*** Distributive property
+
+Sum operations have a distributed property, where
+(\sum_{i}a_{i})(\sum_{j}b_{j}) = \sum(\sum_{i}a_{i}b_{j})~.
+
+*** Permutações
+
+We can switch the order of elements in a set of n distinct objects.
+Switching the order of sums is useful when we know the simple form
+for one sum, but not for the other.
+
+In mathematical terms, we represent permutation of sums as
+\sum_{i}\sum_{j} a_{ij} = \sum_{j}\sum_{i} a_{ij}.
+
+The number of permutations in a set is the _factorial of n_,
+represented as: n! = 1 * 2 * ... n.
+
+Algorithms are described in terms of:
+
+- correctness :: whether the program produces the expected results
+- time efficiency :: how quick the program runs
+- space efficiency :: how much memory the program consumes
+
+The time efficiency of algorithms is usually measured based on
+the number basic operations, and not the absolute time of execution
+(in seconds, minutes, hours).
+
+The time for processing some program increases relatively to
+the size of the input. Therefore, the main question when assessing
+algorithms is how much the time for processing increases as
+the input increases. The _complexity function f(n)_ describes
+the efficiency of the algorithm in terms of execution time
+and input size.
+
+- constant time f(n) = 1 :: algorithms where
+  the execution time is not affected
+  by an increase in the input size;
+- logarithmic f(n) = log(n) :: algorithms where
+  the problem is converted into smaller problems;
+- linear f(n) = n :: algorithms which operate on
+  every element in the input;
+- f(n) = n log(n) :: algorithms which employ a
+  divide and conquer strategy: the problem is divided
+  into smaller pieces, each piece is solved independently,
+  and the result is merged;
+- quadratic f(n) = n^{2} :: algoritms which employ
+  nested loops or process data by pairs.
+- exponential f(n) = c^{n} :: algorithms which employ
+  brute force, evaluating every possible solution
+  for a problem.
+
+Complexity functions are compared in terms of their _asymptotic behaviour_,
+that is, we only take into account the growth tendency,
+and not absolute values. Multipliers and other small multipliers
+are ignored. Also, the analysis is based on an abstract machine,
+independently of the architecture of the physical machine.
+
+- Each operation (arithmetic, logical, method call) costs one unit of time;
+- Loops cost t * the number of iterations;
+- Access to memory costs one unit of time; the model does not take into account
+  the available space or the difference between the different types of memory
+  (hard disk, ram, cache).
+
+*** Asymptotic domination
+
+A function f(n) is asymptotically dominant over another function g(n)
+if there are two positive constants c and m such that, for n \geq m,
+|g(n)| \leq c \circ |f(n)|.
+
+The _big o notation_ expresses that asymptotic domination.
+By g(n) = O(f(n)) expresses a g(n) with the maximum order of f(n);
+in other words, f(n) is a superior asymptotic limit for g(n).
+
+** Sorting algorithms
+
+Algorithms for ordering collections use parts of elements called _keys_.
+We must use types of data for which there is a predefined order,
+such as numbers and letters. Ordering algorithms are called _stable_
+if the relative order of elements with the same key are unaltered
+during the sort.
+
+- internal sorting :: the entire collection fits in the main memory;
+  any element can be instantly accessed
+- external ordering :: the collection is too big for main memory,
+  and must be stored in the hard disk; elements are accessed in batches.
+
+*** Insertion sort
+
+The insertion sort algorithm compares every element with the previous element,
+and inserts it in the correct place. For that, it employs a nested loop.
+
+#+BEGIN_SRC C
+  #include <stdio.h>
+
+  int main() {
+    int arr[10] = {4,7,2,1,8,9,0,6,3,5};
+
+    for (int i = 1; i < 10; i++) {
+      int key = arr[i];
+      int j = i - 1;
+      while (j >= 0 && arr[j] > key) {
+        arr[j + 1] = arr[j];
+        j--;
+      }
+      arr[j + 1] = key;
+    }
+    
+    for (int i = 0; i < 10; i++){
+      printf("%d ", arr[i]);
+    }
+    return 0;
+  }
+
+#+END_SRC
+
+#+RESULTS:
+: 0 1 2 3 4 5 6 7 8 9
+
+- best case :: O(n)
+- worst case :: O(n^{2})
+
+*** Bubble sort
+
+Bubble sort is the simplest algorithm to understand,
+but it has the worst performance. The collection is iterated
+sequentially, and each time an element is compared to its successor;
+if arr[i] is greater than i[i+1], the elements are switched.
+
+#+BEGIN_SRC C
+  #include <stdio.h>
+
+  int main(){
+    int arr[10] = {4,7,2,1,8,9,0,6,3,5};
+
+    for (int i = 0; i < 10 - 1; i++) {
+      for (int j = 0; j < 10 - i; j++){
+        if (arr[j] > arr[j + 1]) {
+          int temp = arr[j + 1];
+          arr[j + 1] = arr[j];
+          arr[j] = temp;
+        }
+      }
+    }
+
+    for (int i = 0; i < 10; i++){
+      printf("%d ", arr[i]);
+    }
+    return 0;
+  }
+
+#+END_SRC
+
+#+RESULTS:
+: 0 1 2 3 4 5 6 7 8 9
+
+** Asymptotic order
+
+The _omega notation_ describes the inferior limit for a function.
+For a given function g(n), f(n) = \Omega(g(n)) means that g(n) is
+an inferior asymptotic limit for f(n). Therefore, there are
+positive constants c and m such that 0 \le cg(n) \le f(n)
+for every n \ge m.
+
+
+\Umas das aplicações da notação Theta (Θ) é estabelecer uma métrica para comparação de funções. Com isso, um dado conjunto de funções pode ser ordenado de maneira a identificar aquelas que têm maior e menor crescimento assintótico.
+
+n^3/log(n)
+n^2*sqrt(n)
+17
+log(n^20)
+log^2(n)
+
+Considerando o seguinte conjuntos de funções:
+Ordene de forma crescente das funções, em termos da notação Theta.
+
+

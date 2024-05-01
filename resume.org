@@ -1,89 +1,88 @@
 #+OPTIONS: toc:nil num:nil
+#+LaTeX_CLASS: simple-resume-cv
 
 * Pedro Schreiber
 schreiber.mmb@gmail.com | +5511997612304
 
-** SUMMARY
 *Software engineer with 5 years of experience* developing different aspects of computer systems and web applications.
 
-- Backend development with languages and frameworks like *Elixir/Phoenix, Javascript/Node, Python/Django/Flask*,
-  providing *REST and GraphQL APIs* for web applications and services;
-- Frontend development with the vanilla stack of *HTML, CSS and Javascript*, frameworks like *React, Vue, Bootstrap*,
-  and tools such as *SASS and Typescript*;
-- Distributed systems architecture and asynchronous jobs processing, with *Apache Kafka, Rabbit MQ, and AWS Lambda*;
-- Database systems, such as *MySQL, PostgreSQL, Redis, MongoDB*, and caching with *Redis*.
-- Cloud and infrastructure for deploying applications to AWS, using services like *EC2, ECS, Fargate, S3*,
-  and tools like *Docker, Kubernetes and Terraform*;
-- *Object-Oriented Programming*, with a solid *understanding of patterns* and languages like *Javascript, Python, Ruby*;
-- *Functional programming languages*, with practical and theoretical understanding of concepts and languages
-  like *Elixir, Erlang, Haskell, and Lisp*.
-
-** EXPERIENCE
-
+** experience
 *** Stone - software engineer 2022 - current
+Stone is a /fintech/ company that provides services such as POS terminals, online payments, and ecommerce
+to small and medium-sized businesses. I worked in the /identity platform/ team,
+designing and programming systems for notifications, registration, authentication and authorization,
+in a complex architecture of multiple microservices. My work includes:
 
-Developed an application that delivers notifications (email, sms, push, webhooks) to millions of users
-and applications daily, through *asynchronous processing of Kafka events*, with configurable
-message templates and file attachments.
-
-Developed account authentication and authorization systems, providing user registration
-based on *UML data diagrams and REST APIs* to structure and manipulate the database,
-and *OAuth 2.0 protocol-compliant tokens with cryptographic signature and encryption*.
-
-STACK: *Elixir, PostgreSQL, AWS, Docker, Kubernetes, Apache Kafka, React*
-
+- *Integrations with external services* for sending email, sms, and push notifications;
+- *REST APIs* to provide fetching and putting data on the databases, and publishing events;
+- *Apache Kafka* producers and consumers for asynchronous processing of application events;  
+- *Documentation* for systems, functionalities and code,
+  in the form of module docs, api docs, and articles
+- *Unit and integration tests* using programming language tools,
+  test databases and sandbox environments.
+  
 *** Árvore - software engineer 2021 - 2022
-Developed an application that provides a digital library for schools,
-with an *MVC architecture* and complex modeling of user groups and levels, and *GraphQL and REST APIs*
-to integrate the React web and mobile frontends with the MySQL database backend.
+Árvore is an /edtech/ company that provides a digital library for students and teachers as a subscription.
+I worked in the /product marketing/ team, designing and programming features
+for client acquisition in the product. My work includes:
 
-Led the technical support team, with the responsibility of investigating and fixing problems
-with user accounts and system features, mostly by checking system logs
-and correcting inconsistencies in the database.
+- *MVC architecture* code in Elixir and Ruby on Rails; 
+- *GraphQL APIs* to manipulate the database and integrate backend and frontend;
+- *React.js* frontend, including global state store and GraphQL client;
 
-STACK: *Elixir, Ruby on Rails, PHP, React, MySQL, PostgreSQL, AWS, Docker, Kubernetes*
+*** BETC Havas - software engineer 2020 - 2021
+BETC Havas is an international marketing agency which creates innovative marketing strategies.
+I worked in the /web development/ team, coding the website for the telecom company TIM.
+My work includes:
 
-*** HavasPlus - software engineer 2020 - 2021
-
-Developed the website for the telecom company TIM, and modernized a legacy system
-to allow dynamic data rendering, by implementing a database backend
-and *Vue components written in Typescript*.
-
-STACK: *Typescript, Vue, HTML, SASS, Node*
-
-*** LQDI - Web Developer 2018 - 2019
-
-Created landing pages and email marketing in pure HTML, CSS, Javascript,
-and using tools like Vue components for interactivity and Bootstrap for responsiveness.
-
-STACK: *HTML, CSS, Javascript, Vue*
+- *Vue components* for dynamically rendering data produced by the business team;
+- *SASS/CSS stylesheets* for styling web pages; 
+- *Static file database* using XML tables to store business data;   
+- *Legacy systems* for deploying web pages through FTP and internet explorer Java applets.
+  
 
 *** Newbacon - CRM analyst 2018 - 2019
+Newbacon is a data-driven marketing agency which provides business insights and communications.
+I have work in the /CRM strategy/ team, creating communications flowcharts to drive customer engagement.
+My work includes:
 
-Created data-driven email and sms communications, using SQL database and
-CRM tools to map client engagement with marketing campaigns.
+- *SQL database for business analytics*, retrieving and analysing customer cycle data;
+- *Email and sms templates* rendering dynamic data retrieved from the database;
 
-STACK: *MySQL, HTML, CSS*
+
+*** LQDI - Web Developer 2018 - 2019
+LQDI is a marketing agency which creates design and technology solutions. My work includes:
+
+- *HTML, CSS, Javascript* for creating web pages and email marketing;
+- *Reactjs* for writing web apps.
 
 *** Rudek Wydra - content writer and web developer 2016 - 2018
+LQDI is a marketing agency which creates websites and email marketing for the manufacturing industry.
+My work includes:
 
-Created institutional websites for manufacturing industry companies
-and technology events, using Wordpress templates.
+- *Wordpress* websites;
 
-STACK: *HTML, Wordpress*
 
-** EDUCATION
+** education
 - Universidade Anhembi Morumbi - BS, Computer Science (2020-2024)
 - Universidade de São Paulo - BA, Philosophy (2010-2015)
 
-** LANGUAGES
+** languages
 
-- *Portuguese* native/proficient
-- *English* fluent/proficient
-- *French* intermediate
-- *Spanish* intermediate
+- Portuguese :: native/proficient 
+- English ::    fluent/proficient 
+- French  ::    intermediate      
+- Spanish ::    intermediate      
 
-** COURSES AND CERTIFICATIONS
+** tools
+
+| *Languages*          | Elixir  | Go         | Python | Javascript   |
+| *Frameworks*         | Phoenix | React      | Vue    |              |
+| *Databases*          | MySQL   | PostgreSQL | Redis  |              |
+| *Infrastucture, etc* | Docker  | Kubernetes | AWS    | Apache Kafka |
+
+
+** courses and certifications
 
 - Senac - Introduction to Computer Hardware and Technical Maintenance (2008)
 - University of Cambridge - Cambridge English: Proficiency (C2)
