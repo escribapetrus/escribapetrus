@@ -1,13 +1,12 @@
-#+OPTIONS: toc:nil num:nil
-#+LaTeX_CLASS: simple-resume-cv
+#+OPTIONS: toc:nil num:nil date:nil author:nil
 
-* Pedro Schreiber
-schreiber.mmb@gmail.com | +5511997612304
+#+TITLE: Pedro Schreiber
+#+SUBTITLE: schreiber.mmb@gmail.com | +5511948291228
 
 *Software engineer with 5 years of experience* developing different aspects of computer systems and web applications.
 
-** experience
-*** Stone - software engineer 2022 - current
+* experience
+** Stone - software engineer 2022 - current
 Stone is a /fintech/ company that provides services such as POS terminals, online payments, and ecommerce
 to small and medium-sized businesses. I worked in the /identity platform/ team,
 designing and programming systems for notifications, registration, authentication and authorization,
