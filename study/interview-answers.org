@@ -1,0 +1,20 @@
+#+TITLE: Interview answers
+#+AUTHOR: Pedro Schreiber
+
+* How do you solve conflicts when implementing a feature
+* How do you decide when to use a 3rd party software of create the feature from scratch?
+* Tell me about a challenging problem you faced during a project and how you solved it.
+* Describe your experience with version control systems like Git.
+* How do you ensure the quality of your code?
+* Can you explain the difference between unit testing, integration testing, and end-to-end testing?
+* Have you worked in an Agile/Scrum environment before? If so, describe your role and experience.
+* What programming languages and technologies are you most comfortable with?
+* Can you walk me through your process of debugging a particularly tricky issue?
+* Describe a situation where you had to learn a new technology or programming language quickly. How did you approach it?
+* Discuss a project where you had to work under tight deadlines. How did you manage your time and prioritize tasks?
+* Have you ever refactored a piece of code? If so, what was your approach and what were the results?
+* How do you stay updated with new technologies and industry trends?
+* Describe a situation where you had to collaborate with a team member who had a different technical background or skill level.
+* Can you explain the concept of object-oriented programming (OOP) and its advantages?
+* Have you ever encountered a security vulnerability in your code? How did you address it?
+* What motivates you as a software developer?
