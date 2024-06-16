@@ -120,4 +120,40 @@ resolução definitiva requer mais conhecimento técnico do que existe hoje.
 
 # Por que atribuir qualidades mentais
 
+Por que deveríamos atribuir qualidadades mentais a máquinas? Esta é a questão
+oposta à do reducionismo. Em vez de perguntarmso como as qualidades mentais
+podem ser reduzidas a qualidades físicas, perguntamos como atribuir qualidades
+mentais a sistemas físicos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
