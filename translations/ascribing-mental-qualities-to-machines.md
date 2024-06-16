@@ -5,7 +5,7 @@ author: John McCarthy
 translated by: P. Schreiber
 
 abstract
-Atribuir qualidades mentais como _crenças_, _intenções_ e _apetites_ a uma máquina é às vezes
+Atribuir qualidades mentais como _crenças_, _intenções_ e _vontades_ a uma máquina é às vezes
 correto, quando feito de forma conservadora, e necessário para expressar o que se sabe sobre
 seu estado. Propomos para isso novas ferramentas definicionais: definições relativas a uma
 teoria aproximada, e definições estruturais de segunda ordem.
@@ -14,13 +14,13 @@ teoria aproximada, e definições estruturais de segunda ordem.
 # Introdução
 
 Atribuir certas _crenças, conhecimento, livre-arbítrio, intenções, consciência, habilidade 
-ou apetites_ a uma máquina ou programa de computador é legítimo quando tal atribuição expressa
+ou vontades_ a uma máquina ou programa de computador é legítimo quando tal atribuição expressa
 a mesma informação sobre a máquina que expressa sobre uma pessoa. É útil quando a atribuição
 ajuda-nos a entender a estrutura da máquina, seu comportamento passado ou futuro, como reparar
 ou melhorá-la. Não é talvez jamais logicamente necessário mesmo para humanos, mas expressar
 razoável e brevementeo que sabe-se sobre o estado de uma máquina em uma situação particular
 pode exigir atribuir a elas qualidades mentais ou qualidades isomórficas[^1]. Teorias sobre a
-crença, o conhecimento e o apetite podem ser elaboradas a respeito de máquinas de forma mais
+crença, o conhecimento e o vontade podem ser elaboradas a respeito de máquinas de forma mais
 simples do que a respeito de humanos, e em seguida aplicadas a humanos. A atribuição de
 qualidades mentais é mais direta e imediata para máquinas de estrutura conhecida, como
 termostatos e sistemas operacionais de computadores, mas é mais útil quando aplicada a entidades
@@ -121,18 +121,104 @@ resolução definitiva requer mais conhecimento técnico do que existe hoje.
 # Por que atribuir qualidades mentais
 
 Por que deveríamos atribuir qualidadades mentais a máquinas? Esta é a questão
-oposta à do reducionismo. Em vez de perguntarmso como as qualidades mentais
+oposta à do reducionismo. Em vez de perguntarmos como as qualidades mentais
 podem ser reduzidas a qualidades físicas, perguntamos como atribuir qualidades
 mentais a sistemas físicos.
 
+Nossa motivação geral para atribuir qualidades mentais é a mesma que a para
+atribuir quaisquer outras qualidades: expressar informações disponíveis sobre
+a máquina e seu atual estado. Para ter informações, devemos ter um espaço de
+possibilidades, descritas explicitamente ou não. A atribuição deve portanto
+servir para distinguir o estado presente da máquina de estados passados ou
+futuros, do estado qem que estaria em outras condições, e do estado de outras
+máquinas. Portanto, o problema é se a atribuição de qualidades mentais é útil
+para essas distinções no caso das máquinas.
 
+Para definir o problema com mais precisão, consideremos um programa de
+computador para o qual possuímos todo o código-fonte[^5]. O comportamento do
+programa em qualquer ambiente é determinado pela estrutura do programa e pode
+ser desvendado simulando a ação do programa e do ambiente, sem precisar
+lançar mão de qualquer conceito de crença. Mesmo assim, há várias razões para
+atribuir a crença e outras qualidades mentais:
 
+[^5]: _complete listings_, programas de computador impressos em linguagem
+de programação.
 
+1. Mesmo que conheçamos o programa, seu estado em determinado momento não é
+diretamente observável, e os fatos que podemos apreender sobre seu estado
+atual podem ser, mais do que de qualquer outro modo, prontamente expressos 
+atribuindo certas crenças e objetivos.
+2. Mesmo que possamos simular sua interação com o ambiente por meio de outro
+programa mais compreensível, a simulação pode ser um bilhão de vezes mais lenta.
+Podemos também não ter acesso às condições iniciais do ambiente ou às leis 
+de movimento de forma adequada, ao passo que podemos prever os efeitos das
+crenças que atribuímos ao programa sem a presença de um computador físico.
+3. Atribuir crenças permite derivar enunciados gerais sobre o comportamento
+do programa que não poderiam ser obtidos de qualquer número finito de simulações.
+4. As estruturas de crenças e objetivos que atribuímos a programas podem ser 
+mais fáceis de compreender que os detalhes do programa expressos no código-fonte.
+5. A estrutura de crenças e objetivos é presumivelmente mais próxima da estrutura
+mental concebida pelo programador[^6]; portanto, pode ser mais fácil 
+corrigir[^7] o programa em termos desta estrutura do que diretamente pelo 
+código-fonte. De fato, é frequente que corrijam-se falhas raciocinando em 
+termos gerais sobre as informações de um programa ou máquina, diagnosticando 
+quais são as crenças falsas, e procurando nos detalhes de um programa ou 
+máquina apenas o suficiente para determinar como crenças falsas são 
+representadas e quais mecanismos causam seu surgimento.
+6. A diferença entre um programa e outro programa real ou hipotético pode ser
+melhor expressada como uma diferença de estruturas de crenças.
 
+[^6]: _designer of the program_.
+[^7]: _debug_.
 
+Todas as razões acima para atribuir crenças são epistemológicas; i.e., 
+atribuir crenças é necessário para adaptar as limitações da nossa habilidade 
+de adquirir conhecimentos, fazer previsões, e estabelecer generalizações em
+termos das estruturas fundamentais de programas. Talvez esta seja a razão geral
+para atribuir altos níveis de organização a sistemas[^8].
 
+[^8]: linguagens de alto nível, abstrações.
 
+Computadores dão ensejo ao surgimento de vários exemplos de como construir
+estruturas de alto nível com base em estruturas de baixo nível, e de como
+fazer análises utilizando as estruturas de alto nível. A geometria de campos
+elétricos em um transistor e sua composição química determinam suas propriedades
+como elementos de um circuito elétrico. Transistores são combinados em pequenos
+circuitos e alimentados segundo padrões que constituem elementos lógicos como
+_ANDs_, _ORs_, _NOTs_, e _flip-flops_. Computadores são desenhados com esses
+componentes lógicos de forma a obedecer certas operações do processador[^9]; 
+o arquiteto do sistema normalmente não precisa considerar as propriedades dos 
+transistores como elementos do circuito. Ao escrever um compilador a partir de 
+uma linguagem de alto nível, trabalhamos com as operações do processador sem
+precisar conhecer os _ANDs_ e _ORs_; o usuário de uma linguagem de alto nível
+não precisa conhecer as operações do processador de um computador.[^10]
 
+[^9]: _order code_, e.g. operações definidas em assembly language.
+[^10]: McCarthy descreve aqui o procedimento que convencionou-se chamar de 
+_abstração.
+
+Nos casos descritos acima, usuários do alto nível podem ignorar completamente
+o baixo nível, porque o comportamento do alto nível é totalmente determinado
+pelos valores de variáveis de alto nível; e.g., para determinar o resultado de
+um programa de computador, não é necessário levar em consideração os 
+_flip-flops_ da máquina. Entretanto, quando atribuímos estruturas mentais a 
+humanos ou objetivos para a sociedade, sempre produzimos sistemas incompletos;
+o comportamento de alto nível não pode ser totalmente previsto por observações
+e leis de alto nível, mesmo quando o comportamento de baixo nível é determinado.
+Além disso, em um dado estado da ciência e da tecnologia, diferentes tipos de
+informação podem ser obtidos a partir da experiência e da construção de teorias
+em diferentes níveis da organização.
+
+Para programar um computador que obtenha informações e coopere com pessoas e
+outras máquinas, precisamos fazer com que atribua conhecimento, crenças e
+vontades em outras máquinas e pessoas. Por exemplo, um programa que planeje
+viagens deverá atribuir cohecimento a agentes de viagem e computadores de
+reserva de companhias aéreas. Deverá de alguma maneira tratar as informações
+nos registros, talvez atribuindo a eles uma forma passiva de conhecimento.
+Quanto mais poderoso for o programa para interpretar o que lhe é dito, menos
+precisará conhecer sobre como a informação que recebe é representada
+internamente em sua fonte, e mais suas atribuições de conhecimento parecer-se-ão
+com as atribuições de conhecimento de um ser humano a outro.
 
 
 
