@@ -154,3 +154,274 @@ Considerations:
   should be able to get data from the origin;
 - invalidation :: in case the object becomes stale, it must be invalidated and
   a new version accessed.
+
+*** Stateful web
+
+A stateful server is one which stores user session data from one request to another.
+
+Maintaining state consistent requires that all requests are routed to the same server,
+which can be solved with sticky sessions in load balancers.
+  
+*** Stateless web
+
+Stateless architecture is one where requests can be sent to any server in a cluster,
+which fetches data from a shared data store, not from the web server. It is
+simpler, more robust, more scalable.
+
+Session data is stored in persistent storage, such as a relational database or noSQL.
+
+*** Data centers
+
+Decoupling data centers is a way of providing more resilience and reduce response delay.
+Using geo-routing, we can check client location and route requests to the closest
+data center.
+
+In case of a critical outage in a data center, requests are routed to other
+data centers.
+
+Challenges:
+- traffic redirection :: route traffic to the correct data center using GeoDNS;
+- data synchronization :: in case users are routed to a different data center,
+  their data should be preserved (for example, with asynchronous
+  multi data-center replication;
+- test and deployment :: applications should be tested at different locations,
+  using automated tools.
+
+**** TODO How does GeoDNS work?
+**** TODO How does asynchronous multi-data center replication work?
+
+*** Message queue
+
+A message queue is a buffer that distributes asynchronous requests. It allows a system
+to push heavy workloads to background processing. It can then pick up the work when available,
+avoiding blocks.
+
+The main architectural components of a message queue are:
+- publisher :: creates messages and adds them to the queue
+- queue :: stores messages
+- consumer :: reads messages and removes them from the queue
+
+Producers and consumers can be scaled independently. If there are too many requests,
+we can add more producers or consumers.
+
+**** TODO What is the difference between the different message queues (SQS, RabbitMQ, Kafka)?
+
+*** Logging, metrics, automation
+
+Logging events, especially errors, allows us to understand problems in the system
+and investigate their causes (which may be in the software, the database, the infrastructure).
+
+Metrics are information about the infrastructure, such as CPU, memory,
+disk IO and network; they are useful to understand if the machines are under
+too much load (in which case we should scale up/out) or if there are underused
+resources (in which case we could scale down/in to save money).
+
+- host-level metrics :: CPU, memory, disk IO;
+- aggregated metrics :: database performance, cache performance;
+- business metrics :: daily active users, sales;
+
+Automation techniques such as continuous integration (CI) and continuous deployment (CD)
+reduce repetitive operations such as running tests, building applications, configuring,
+logging in and transferring files to remote servers.
+
+*** Database scaling
+
+Sharding is the practice of adding more servers to a cluster of databases.
+Shards share the same schema, but include different data.
+
+Entries are allocated to particular shards based on certain fields and strategies.
+For example, _hashing functions_ allow us to route the entry to a database
+based on its value. An example of hashing_function is
+~\lambda(val, n) = val % n~. 
+
+The /partition key/ is one or more columns which determine how data is distributed.
+It is important to choose a key which evenly distributes data. For example,
+distributing data alphabetically is a bad strategy, because there are many more
+names starting with A than Z. This can make some shards busier than other
+(creating /hotspots/).
+
+Challenges:
+- resharding data :: shards can become full and require resharding
+  and moving data around;
+- celebrity problem :: excessive access to a specific shard can cause server overload,
+  because not all data is requested with the same frequency
+  (e.g. Beyoncé's profile vs. John Doe's profile);
+- join and de-normalization :: it is hard to perform join operations across database shards,
+  and de-normalization may be required to allow single table queries.
+
+** Chapter 2: Back-of-the-envelope estimation
+
+#+BEGIN_QUOTE
+Back-of-the-envelope calculations are estimates you create using a combination of
+thought experiments and common performance numbers to get a good feel for
+which designs will meet the requirements".
+#+END_QUOTE
+
+Important concepts:
+- power of two
+- latency numbers
+- availability numbers
+
+*** Power of two
+
+A byte is a sequence of 8 bits. An ascii char is one byte.
+
+| 1kb | 2^10 | 1000 bytes          |
+| 1mb | 2^20 | 1M bytes            |
+| 1gb | 2^30 | 1MM bytes           |
+| 1tb | 2^40 | 1 trillion bytes    |
+| 1pb | 2^50 | 1 quadrillion bytes |
+
+*** Latency numbers
+
+| L1 cache reference                 | 0.5ns |
+| Branch mispredict                  | 5ns   |
+| L2 cache reference                 | 7ns   |
+| Mutex lock/unlock                  | 100ns |
+| Main memory reference              | 100ns |
+| Compress 1kb with zippy            | 10 \mu{}s |
+| Send 2kb over 1gbps network        | 20\mu{}s  |
+| Read 1mb sequentially from memory  | 250\mu{}s |
+| Round trip within a datacenter     | 500\mu{}s |
+| Disk seek                          | 10ms  |
+| Read 1mb sequentially from network | 10ms  |
+| Read 1mb sequentially from disk    | 30ms  |
+| Send packet US -> NE -> US         | 150ms |
+
+**** Takeaways
+
+- Memory is fast, disk is slow
+- Avoid disk seek whenever possible
+- Simple compression is fast
+- Compress data before sending over the web
+- It takes time to send data to data centers
+  across different regions
+
+*** Availability numbers
+
+Availability means how long the system can be trusted to remain online.
+Service-level agreements (SLA) are provided by services,
+defining the expected uptime of the system.
+
+|      99% | 1mm per day   | 3.5d a year  |
+|    99.9% | 1.5m per day  | 8.7h a year  |
+|   99.99% | 8.5s per day  | 52.5m a year |
+|  99.999% | 850ms per day | 5m a year    |
+| 99.9999% | 86ms per day  | 31s a year   |
+
+** TODO Chapter 3: Consistent hashing
+
+Consistent hashing is a technique for distributing requests and data evenly
+across servers in a distributed system.
+
+*** Hashing
+
+Hashing is a common way to balance load and distribute data across servers,
+using the equation ~serverIndex = hash(key) % n~, where n is the number of
+servers in the cluster.
+
+This operation works well when the number of servers is fixed and data distribution is even.
+If the number of servers changes, the value of ~serverIndex~ changes, most keys are redistributed,
+which causes cache misses and inconsistencies: existing data cannot be found,
+new values will be stored in different shards than they would have been. 
+
+*** Consistent hashing
+
+#+BEGIN_QUOTE
+Consistent hashing is a special kind of hashing such that when a hash table is re-sized
+and consistent hashing is used, only k/n keys need to be remapped on average,
+where k is the number of keys, and n is the number of slots.
+In contrast, in most traditional hash tables, a change in the number of arrays
+causes nearly all keys to be remapped.
+#+END_QUOTE
+
+*** Hash space and hash ring
+
+The steps for the basic consistent hashing algorithm are:
+
+1. map servers and keys on the ring
+   using a uniformly distributed hash function;
+2. to find the server index, go clockwise from the key position
+   until the first server on the ring is found.
+
+A partition is the hash space between adjacent servers.
+_It is impossible to keep the same size of partitions on the ring_ for all servers,
+and _it is possible to have a non-uniform key distribution on the ring_.
+
+*** Virtual nodes
+
+A virtual node refers to the real node, and each server is represented by multiple virtual nodes
+on the ring.
+
+** Chapter 6: Key-value store
+
+A key-value store is a non-relational database where keys are unique identifiers
+stored with their associated values.
+
+*** CAP Theorem
+
+CAP theorem states that it is impossible for a distributed system to guarantee
+consistency, availability, and partition tolerance.
+
+- consistency :: all clients see the latest data at the same time,
+  no matter which node they connect to;
+- availability :: all requests get responses, even if some nodes are down;
+- partition tolerance :: the system continues to operate despite network failures.
+
+Because network failures are unavoidable, distributed systems must tolerate network partition,
+and therefore have to compromise either service availability or data consistency.
+
+If we choose _availability_ over consistency, the system continues to operate, accept request,
+and deliver responses, but might return stale data.
+
+In order to guarantee _consistency_, the system must block read/write operations before data is
+replicated across all replicas, which may hinder availability (requests will not be processed).
+
+*** Partitioning data
+
+Large data sets need to be partitioned in order to be stored in multiple servers,
+as they do not fit in a single server. This can be solved using _consistent hashing_.
+
+- distribute data across multiple servers evenly;
+- minimize data movement when nodes are added or removed.
+
+*** Replication
+
+Data must be replicated asynchronously across multiple servers to achieve high availability
+and reliability.
+
+Nodes in the same data center often fail at the same time due to power outages, network issues,
+natural disasters. Replicas should be placed in distinct data centers connected by
+high-speed network.
+
+*** Consistency
+
+Data replication requires _synchronization across replicas_. 
+
+_Quorum consensus guarantees consistency_ for read and write operations.
+
+- n :: number of replicas;
+- w :: write quorum; write operations require acknowledgement from w replicas;
+- r :: read quorum; read operations must wait responses from at least R replicas.
+
+The configuration of w, r, n defines a tradeoff between latency and consistency:
+
+- if r = 1 and w = n, the system is optimized for fast read;
+- if w = 1 and r = n, the system is optimized for fast write;
+- if w + r > n, strong consistency is guaranteed;
+- if w + r <= n, strong consistency is not guaranteed.
+
+**** Consistency models
+
+A consistency model defines the degree of data consistency. Strong consistency is achieved
+by blocking reads/writes until every replica has agreed on the current write. This is not ideal
+for highly available systems, as it could block new operations.
+
+- strong consistency :: any read operation returns a value
+  corresponding to the result of the most recent update;
+  the client never receives stale data;
+- weak consistency :: read operations may not see the most recent update;
+- eventual consistency :: given enough time, all updates are propagated,
+  and replicas will become consistent (though they may not be presently).
+
+  

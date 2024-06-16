@@ -1,14 +1,67 @@
 #+TITLE: Interview answers
 #+AUTHOR: Pedro Schreiber
 
-* How do you solve conflicts when implementing a feature
-* How do you decide when to use a 3rd party software of create the feature from scratch?
+* How do you solve conflicts when implementing a feature?
+
+It is important to talk about different ideas and possible solutions, to clarify the advantages and disadvantages of each.
+After all, software engineer is often about trade-offs. However, I do not think discussing opinions is enough to solve a conflict.
+In my experience, that usually requires appealing to an external source, such as standards, requirements, performance.
+
+For example, one time we were implementing some notifications triggered by events in the application,
+by sending messages to a Kafka queue that scheduled requests to the notifications system.
+The developer wanted to bypass the Kafka by scheduling the notification request directly in the asynchronous job processing tool,
+which does make sense indeed -- it reduces one step and some overhead. However, I disagreed, arguing that Kafka provides batch processing,
+and also that using Kafka was the agreed upon architecture.
+
+* How do you decide when to use a 3rd party software or create the feature from scratch?
+
+It comes down to balancing cost and benefit in terms of value provided versus the requirements.
+
+For example, when I was developing a notification server, I had to create some /adapters/,
+modules that deliver notifications on different channels, e.g. email, sms.
+For each, we had to decide whether to use an external library or develop it from scratch.
+
+For email, for example, I decided to use a widely-used open-source library that came with an entire email dsl,
+and a complete API for constructing emails, adding attachments, and sending synchronously and asynchronously.
+
+For sms, however, I realized that even if there was a library that provided integration with Twilio (the delivery service),
+the integration was so simple that I could just write the functions that interacted with services' API without having
+to add a dependency to the project.
+
 * Tell me about a challenging problem you faced during a project and how you solved it.
 * Describe your experience with version control systems like Git.
+
+Git and GitHub are essential to my daily work, both for tracking the work and collaborating with colleagues.
+
+Ideally, I track my work on a new feature by creating a new branch, and applying commit changes whenever
+some important step is working and tested.
+
+I try to write lengthy commit messages that can serve as documentation of the process. That makes it easy to write
+the PR description and the final squashed commit.
+
 * How do you ensure the quality of your code?
+
+I would describe code quality in terms of these characteristics:
+
+- Performance :: The program has to be efficient, at least in terms of the product requirements.
+  for example, we don't want to repeatedly read the same data without any caching technique,
+  or execute heavy blocking operations (e.g. disk io, http requests) synchronously.
+- Testing :: The code has to be trusted to work, and the best tool to guarantee that requirement,
+  even after future changes to the code base, is to write good tests (and preferably integrate
+  testing to the build process).
+- Clarity :: Clearly named variables and functions, and documentation in code.
+  Programming in a big project is a collaborative work, and it is essential that peers understand the code. 
+
 * Can you explain the difference between unit testing, integration testing, and end-to-end testing?
+
+- Unit tests :: validate the behaviour of single functions, where we set some expectations,
+  run the functions, and assert that the results are equal to the expected;
+- Integration tests :: validate not only the results of functions, but also actions such as
+  interactions with the database, HTTP requests and responses from internal and external APIs;
+- End-to-end tests :: validate the correct execution of the entire system, from compilation
+  to actions provided by the API.
+
 * Have you worked in an Agile/Scrum environment before? If so, describe your role and experience.
-* What programming languages and technologies are you most comfortable with?
 * Can you walk me through your process of debugging a particularly tricky issue?
 * Describe a situation where you had to learn a new technology or programming language quickly. How did you approach it?
 * Discuss a project where you had to work under tight deadlines. How did you manage your time and prioritize tasks?
