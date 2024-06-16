@@ -1,0 +1,46 @@
+What is the primary purpose of an API Gateway?;To manage and route API requests from clients to the appropriate backend services, handling tasks such as authentication, authorization, rate limiting, data manipulation, and caching.
+Name two key functionalities of an API Gateway.;processing multiple concurrent requestsroute traffic to different servicesauthentication and authorizationmonitoring requests and responsesmanage API contracts and transform data
+How does an API Gateway enhance security for backend services?;By enforcing security policies like API key validation, OAuth, and other authentication and authorization mechanisms.
+What is the primary purpose of a Load Balancer?;To distribute incoming network traffic across multiple servers to ensure no single server becomes overwhelmed, providing high availability and reliability.
+List three load balancing algorithms.;Round-robinleast connectionsIP hash.
+What is the role of health checks in load balancing?;To monitor the health of servers and ensure traffic is only directed to healthy servers.
+What is the primary purpose of a Reverse Proxy?;To act as an intermediary for requests from clients to servers, providing anonymity, security, and performance enhancements.
+How does a Reverse Proxy improve performance?;By caching responses to reduce the load on backend servers and decrease response times.
+What layer does an API Gateway typically operate at?;The application layer (Layer 7).
+Can a Load Balancer operate at the transport layer?;Yes, a load balancer can operate at the transport layer (Layer 4) for TCP/UDP traffic.
+How does a Reverse Proxy enhance security?;By acting as a security barrier, protecting servers from direct exposure to the internet.
+What is request aggregation in the context of an API Gateway?;Combining responses from multiple backend services into a single response for the client.
+Give two examples of API Gateway services.;NGINX, Kong, AWS API Gateway, Google Apigee
+What is the difference between API Gateway and Load Balancer in terms of scope?;An API Gateway routes traffic to multiple services in a distributed system.  A load balancer routes traffic to multiple servers (replicas) of a single service.
+What is the primary purpose of the OSI model?;To provide a conceptual framework for understanding and implementing standard protocols in network communications.
+Name the seven layers of the OSI model in order from Layer 1 to Layer 7.;PhysicalData Link NetworkTransportSessionPresentationApplication
+What is the main function of the Physical Layer (Layer 1) of the OSI Model?;Transmission and reception of raw bit streams over a physical medium.
+Which layer of the OS model is responsible for error detection and correction in data packets?;Data Link Layer (Layer 2).
+Which OSI model layer manages logical addressing and routing?;Network Layer (Layer 3).
+What are the main protocols associated with the Transport Layer (Layer 4) of the OSI model?;TCP (Transmission Control Protocol) and UDP (User Datagram Protocol).
+What does the Session Layer (Layer 5) of the OSI model do?;Manages sessions or connections between applications, including establishing, maintaining, and terminating sessions.
+Which layer of the OSI model is responsible for data translation, encryption, and compression?;Presentation Layer (Layer 6)
+Name three protocols that operate at the Application Layer of the OSI model (Layer 7).;HTTP/HTTPSFTPSMTPDNSTelnetSSH
+What is the primary function of the Data Link Layer of the OSI model (Layer 2)?;Provides node-to-node data transfer and handles MAC addresses, error checking (CRC), and flow control.
+What layer of the OSI model is responsible for routing packets across networks?;Network Layer (Layer 3).
+How does the Transport Layer (Layer 4) ensure reliable data transfer?;Through segmentation, flow control, error correction, and protocols like TCP.
+Which OSI layer provides network services directly to user applications?;Application Layer (Layer 7).
+Give an example of a technology that operates at the Physical Layer (Layer 1).;Ethernet (physical aspects)USBBluetooth
+What is the role of the Presentation Layer (Layer 6) in network communication?;Translates data between the application layer and the network, handling data formats, encryption, and compression.
+Which OSI model layer is responsible for establishing, maintaining, and terminating sessions between applications?;Session Layer (Layer 5).
+What does "ingress" refer to in networking?;Ingress refers to the traffic that enters a network or a network device from external sources.
+What does "egress" refer to in networking?;Egress refers to the traffic that exits a network or a network device towards external destinations.
+What is the main focus of managing ingress traffic?;The main focus is on controlling and securing incoming traffic to ensure that only legitimate and safe data is allowed into the network.
+What is the main focus of managing egress traffic?;The main focus is on controlling and securing outgoing traffic to prevent data leaks and ensure internal systems do not communicate with unauthorized external entities.
+Give an example of ingress traffic.;Incoming HTTP requests to a web server.
+Give an example of egress traffic.;Outgoing HTTP responses from a web server.
+What are some common security measures for ingress traffic?;Ingress filtering and firewall rules to block unwanted or harmful traffic.
+What are some common security measures for egress traffic?;Egress filtering and firewall rules to prevent data leaks and control what data can leave the network.
+What might network administrators monitor ingress traffic for?;To detect and prevent potential threats, such as DDoS attacks.
+What might network administrators monitor egress traffic for?;To detect unusual or unauthorized data exfiltration.
+What is ingress filtering?;A security measure used to block malicious or unwanted traffic from entering the network.
+What is egress filtering?;A security measure used to prevent unauthorized data from leaving the network and to block access to malicious websites.
+In what direction does ingress traffic flow?;Into the network or device from external sources.
+In what direction does egress traffic flow?;Out of the network or device towards external destinations.
+Why is controlling egress traffic important?;To prevent data leaks and ensure that internal systems do not communicate with malicious or unauthorized external entities.
+
