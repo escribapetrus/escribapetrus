@@ -1,15 +1,15 @@
----------------
+---
 title: Atribuindo Qualidades Mentais a Máquinas
-author: John McCarthy
-
-translated by: P. Schreiber
-
-abstract
-Atribuir qualidades mentais como _crenças_, _intenções_ e _vontades_ a uma máquina é às vezes
-correto, quando feito de forma conservadora, e necessário para expressar o que se sabe sobre
-seu estado. Propomos para isso novas ferramentas definicionais: definições relativas a uma
-teoria aproximada, e definições estruturais de segunda ordem.
------------------
+author: 
+- John McCarthy (autor)
+- P. Schreiber (tradutor)
+keywords: 
+abstract: |
+  Atribuir qualidades mentais como _crenças_, _intenções_ e _vontades_ a uma máquina é às vezes
+  correto, quando feito de forma conservadora, e necessário para expressar o que se sabe sobre
+  seu estado. Propomos para isso novas ferramentas definicionais: definições relativas a uma
+  teoria aproximada, e definições estruturais de segunda ordem.
+---
 
 # Introdução
 
@@ -220,26 +220,194 @@ precisará conhecer sobre como a informação que recebe é representada
 internamente em sua fonte, e mais suas atribuições de conhecimento parecer-se-ão
 com as atribuições de conhecimento de um ser humano a outro.
 
+# Dois métodos de definição e sua aplicação a qualidades mentais
 
+Em nossa opinião, uma grande fonte de problemas para definir conceitos mentais
+e intensionais[^11] é a fraqueza dos métodos de definição _explicitamente_
+utilizados. Introduzimos aqui dois tipos de definição: _definição relativa a uma teoria aproximada_
+e _definição estrutural de segunda ordem_, aplicando-as à definição de qualidades mentais.
 
+[^11]: _intensional_, termo lógico-filosófico que significa a descrição de um
+objeto por suas propriedades, e não por sua identidade (sua existência mesma).
 
+## Definições relativas a uma teoria aproximada
 
+É consenso que a maioria dos conceitos científicos não são definidos por 
+sentenças em linguagem natural, mas como partes de teorias, e que a aceitação
+da teoria é definida por sua conformidade a uma coleção de fenômenos. Propomos
+um método similar para explicar conceitos mentais e outros conceitos do senso
+comum, mas um fenômeno particular tem um papel mais importante do que no caso de
+teorias científicas: o conceito só é relevante no interior de uma teoria, 
+e não pode ser definido com mais precisão do que essa teoria permite.
 
+A noção de uma teoria aproximada de outra precisa ser formalizada. No caso
+da física, podemos pensar em vários tipos de aproximação numérica ou probabilística.
+Penso que este tipo de aproximação seja atípica e errônea, e não ajude a explicar
+conceitos como _ação intencional_ de forma significativa e relevante a teorias
+aproximadas. Em vez disso, pode desenrolar-se como: 
 
+Consideremos uma teoria detalhada $T$ com uma variável de estado $s$. Podemos
+imaginar que $s$ muda com o tempo. A teoria aproximada $T'$ tem uma variável
+$s'$. Há um predicado $atp(s, T')$ cuja verdade significa que $T'$ se aplica
+quando o mundo está em um estado $s$. Há uma relação $corr(s, s')$ que afirma
+que $s'$ corresponde ao estado $s$. Temos:
 
+$$ \forall s.(atp(s, T') \rightarrow \exists s'.corr(s, s')).$$
 
+Certas funções $f_1(s)$, $f_2(s)$, etc. têm funções correspondentes $f'_1(s')$,
+$f'_2(s')$, etc. Temos relações como:
 
+$$ \forall ss'.(corr(s, s') \rightarrow f1(s) = f1' (s')).$$
 
+Entretato, a teoria aproximada $T'$ pode ter funções adicionais $g'_1(s')$, etc.
+que não correspondem a nenhuma função de $s$. Mesmpo quando for possível construir
+$gs$ correspondentes a $g's$, as definições frequentemente parecerão arbitrárias,
+porque o uso de $g'_1$ pelo senso comum restringir-se-á ao contexto $T'$. 
+Exemplos disso são conceitos cujas definições envolvem contrafatuais.
 
+Suponhamos que se queira atribuir _intenção_ e _livre-arbítrio_, e distinguir
+uma _ação deliberada_ de uma ocorrência. Chamaremos um resultado de _ação deliberada_ 
+se o resultado fosse ser diferente se as intenções da máquina fossem diferentes.
+Isso requer um critério para a verdade da sentença condicional contrafatual
+_"se as intenções fossem diferentes, o resultado não teria ocorrido"_, tornando
+assim necessária uma nova abordagem para uma classe importante de contrafatuais.
 
+Tratamos o _aspecto relevante da realidade_ como um produto cartesiano para que
+possamos falar sobre a mudar um componente deixando os outros inalterados.
+Isso seria razoável se a estrutura de produtos cartesianos existisse no mundo;
+entretanto, ela existe apenas em certos modelos aproximados do mundo. Portanto,
+nenhum estado do mundo como um todo, definido e único, corresponde à mudança
+de um componente. O parágrafo seguinte apresenta essas ideias em mais detalhes.
 
+Suponhamos que $A$ seja uma teoria na qual algum aspecto da realidade é
+caracterizado pelos valores de três quantidades $x$, $y$ e $z$. Consideremos
+$f$ como uma função de três argumentos, e $u$ uma quantidade tal que 
+$u = f(x,y,z)$, onde $f(1,1,1) = 3$ e $f(2,1,1) = 5)$. Consideremos então um
+estado do modelo em que $x = 1$, $y = 1$, e $z = 1$. No interior da teoria $A$,
+a sentença condicional contrafatual _"u = 3, mas se x fosse 2, então u seria 5"_ 
+é verdadeira, porque a condição contrafatual contempla mudar x para 2 e deixar
+as outras variáveis inalteradas.
 
+Agora superemos esse modelo supondo que $x$, $y$ e $z$ são quantidades que
+dependem do estado do mundo. Mesmo se $u = f(x,y,z)$ for tomado como uma
+lei da natureza, o contrafatual não precisa ser tomado como verdade,
+porque alguém pode argumentar que se $x$ fosse 2, então $y$ seria 3, para que
+$u$ não seja 5. Se a teoria $A$ tiver um estado _suficientemente preferido_,
+podemos tomar o significado do contrafatual de $A$ como seu significado geral,
+mas às vezes pode ser melhor considerar o contrafatual definido na teoria,
+i.e. como _sincategoremático_, no jargão kantiano.
 
+Um exemplo do senso comum pode ajudar: suponhamos que um instrutor de esqui diga
+"ele não teria caído se tivesse dobrado os joelhos ao fazer aquela curva", e
+outro instrutor responda "não, ele caiu porque não pôs o peso no esqui na descida".
+Suponhamos ainda que, ao assistir a uma filmagem, eles concordem que o primeiro
+instrutor estava correto e o segundo incorreto. Eu argumento que essa concordância
+se baseia em uma aceitação comum de uma teoria do esqui, e que no interior da teoria,
+a decisão pode se rigorosa mesmo se ninguém imagina um mundo alternativo tão
+semelhante quanto possível ao mundo real, mas em que o aluno tivesse posto
+o peso no esqui na descida.
 
+Propomos que este é frequentemente (e ainda não busquei contraexemplos) o
+significado, segundo o senso comum, de contrafatuais. O contrafatual tem um
+significado definido em uma teoria, porque a teoria tem uma estrutura de 
+produto cartesiano, e a teoria é suficientemente preferida, de tal forma que
+o significado do contrafatual no mundo é tomado como seu significado na teoria.
+Isso é especialmente verdadeiro no caso de conceitos que têm uma definição natural
+em termos de contrafatuais, e.g. o conceito de _ação deliberada_, com que iniciamos
+esta seção.
 
+Em todos os casos que conhecemos, a teoria é aproximada e incompleta. Tomadas certas
+premissas como verdadeiras, uma certa quantidade é aproximadamente uma função de 
+outras quantidades. A incompletude se deve à teoria não prever os estados do mundo,
+mas apenas algumas funções deles. Assim, um conceito útil como a ação deliberada
+parece desaparecer quando examinaddo de perto, e.g. quando tentamos defini-lo
+em termos de estados do mundo, e não em termos de certas funções desses estados.
 
+### Observações
 
+1. Os casos conhecidos em que um conceito é definido
+   em relação a uma teoria aproximada envolvem contrafatuais.
+   Isso pode não ser sempre o caso.
+2. É importante estudar a natureza das aproximações.
+3. McCarthy e Hayes (1969) tratam a noção de _X pode fazer Y_
+   usando uma teoria em que o mundo é entendido como uma grupo
+   de autômatos interagindo entre si. O artigo não leva em consideração
+   que sentenças com "podem" não podem ser traduzidas em afirmações
+   simples sobre o mundo.
+4. A tentativa de uma psicologia introspectiva obsoleta
+   de analizar a mente em termos da interação da _vontade_,
+   _intelecto_ e outros componentes não pode ser excluida pelas razões
+   metodológicas usadas pelos _behavioristas_ e positivistas para
+   classificá-las como sem sentido e excluí-las da ciência. Esses
+   conceitos podem ter definições precisas em uma teoria aproximada adequada.
+5. A abordagem sobre contrafatuais em que são definidos em termos de
+   estruturas de produtos cartesianos de uma teoria aproximada
+   podem ser melhores do que a abordagem do _mundo possível mais próximo_, 
+   de Lewis (1973). Os valores-verdade são bem definidos no interior
+   de teorias aproximadas, e as teorias podem ser justificadas
+   por evidências envolvendo fenômenos não mencionados em afirmações
+   contrafatuais isoladas.
+6. Definições relativas a teorias aproximadas podem ajudar
+   a separar questões, como as que envolvem contrafatuais,
+   em questões _internas_ à teoria aproximada e questões _externas_ 
+   à justificativa da teoria como um todo. Podemos presumir que as
+   questões internas sejams técnicas e tenham respostas definidas para que
+   as pessoas concordem, mesmo que tenham discordâncias científicas 
+   ou filosóficas sobre as questões externas.
 
+## Definições estruturais de segunda ordem
+
+Definições estruturais de qualidades são dadas em termos do estado do sistema
+descrito, ao passo que definições comportamentais são dados em termos de seu
+comportamento atual ou potencial[^12].
+
+[^12]: _Nota do tradutor:_ Definições comportamentais são comuns na 
+filosofia. Dizemos que um sistema tem uma certa qualidade se ele se comporta de
+uma certa maneira ou está _disposto_ a se comportar de certa maneira. É uma
+postura conservadora, que não afirma estados internos inobserváveis pela
+ciência atual, e que podem manter-se inobserváveis. Entretanto, tais definições
+são inadequadas para qualidades mentais, porque, como o senso comum sugere,
+uma qualidade mental pode não resultar em um comportamento, dado que outra
+qualidade mental pode impedi-lo; e.g., posso pensar que alguém é teimoso, mas
+a cortesia me impede de dizê-lo. Certas dificuldades podem ser superadas, mas 
+a ideia permanece vaga. A preferência por definições comportamentais se dá
+por precaução, mas na minha interpretação as experiências científicas mostram
+que a audácia ao postular estruturas complexas de entidades inobserváveis --
+desde que acompanhada da disposição para desfazer erros -- tem mais chances de
+ser recompensada com o entendimento e o controle da natureza do que a timidez
+positivista. É particularmente instrutivo imaginar um _behaviorista_ determinado
+tentando compreender um computador eletrônico. Tentar definir cada qualidade
+por meio de uma abordagem comportamental não o levaria a lugar algum; apenas
+postulando simultaneamente uma estrutura complexa que incluísse memória,
+unidade aritmética, estruturas de controle, e entrada e saída (IO) produziria
+conjecturas comparáveis às experiências. 
+
+    Há um sentido em que as definições operacionais não são tomadas seriamente
+mesmo por seus adeptos. Suponhamos que alguém dê uma definição operacional do
+comprimento (e.g. utilizando uma barra de platina), e toda uma escola de físicos
+e filósofos tornem-se a ela apegados. Alguns anos depois, alguém critica a
+definição, afirmando carecer de alguma qualidade desejável, e propões uma
+alteração que é aceita. Essa situação é normal, mas se a definição original
+expressasse mesmo o significado de comprimentro, a mudança não teria sido 
+aceita, e ter-se-ia argumentado que, embora possivelmente útil, não expressaria
+o que se quer dizer por "comprimento. Isso mostra que o conceito de comprimento
+como uma propriedade dos objetos é mais estável do que qualquer definição
+operacional.
+
+    Carnap tem uma seção interessante em Significado e Necessidade (Meaning
+and Necessity) intitulado "O conceito de intensão para um robô", em que
+argumenta um ponto semelhante, dizendo: "É claro que o método de análise
+estrutural, se aplicável, é mais poderoso do que o método comportamental,
+porque pode proporcionar uma resposta geral, e, em circunstâncias favoráveis,
+até uma resposta completa para a questão da intensão de um dado predicado."
+
+    O argumento decisivo para a inteligência artificial (AI), entretanto, é
+um argumento arquitetônico ("argument from design"). A fim de produzir um
+comportamento desejado em um computador, desenhamos certas qualidades mentais
+em sua estrutua. Isso não leva a caracterizações comportamentais de suas
+qualidades, porque as qualidades particulares são apenas uma das diversas
+formas por meio das quais podemos obter o comportamento desejado, e de toda
+forma o comportamento pode nem sempre se realizar.
 
 
 
