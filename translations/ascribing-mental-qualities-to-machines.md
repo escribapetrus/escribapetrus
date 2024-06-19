@@ -409,5 +409,78 @@ qualidades, porque as qualidades particulares são apenas uma das diversas
 formas por meio das quais podemos obter o comportamento desejado, e de toda
 forma o comportamento pode nem sempre se realizar.
 
+Se a estrutura da máquina for conhecida, pode-se oferecer uma _definição estrutural de primeira ordem ad hoc_.
+Trata-se de um predicado $B(s,p)$ em que $s$ representa o estado da máquina,
+$p$ representa uma sentença em uma linguagem adequada, e $B(s,p)$ é a afirmação
+de que quando a máquina estiver em um estado $s$, ela _crê_ na sentença $p$.
+As considerações deste artigo são neutras quanto a considerar o objeto da crença
+como uma sentença, usar um operador modal, ou admitir _proposições_ como objetos
+críveis. Escrevemos este artigo tomando sentenças como objetos da crença, mas
+recentemente passei a preferir as proposições, e discuto-as em outro texto (McCarthy, 1979).
 
+Uma definição estrutural de _primeira ordem_ de crença seria um predicado
+$B(W,M,s,p)$ em que $W$ fosse o mundo em que a máquina $M$ em questão estaria
+situada. Não posso dizer como oferecer uma tal definição de crença, e penso
+ser impossível. Portanto, devemos conformar-nos com definições de segunda ordem[^13].
 
+[^13]: Putnam (1970) também propõe definições de segunda ordem para
+propriedades psicológicas.
+
+Uma definição estrutural de segunda ordem de crença é um predicado de segunda
+ordem $\Beta(W,M,B)$, que afirma que o predicado de primeira ordem $B$ é uma
+boa noção que a máquina $M$ tem no mundo $W$. _Boa_ significa que as crenças
+que $B$ atribui a $M$ estão de acordo com as nossas ideias sobre quais crenças
+$M$ teria, e não que as crenças são em si mesmas verdadeiras. A axiomatização
+de crenças disponíveis na literatura são definições de segunda ordem parciais.
+
+Em geral, definições de segunda ordem oferecem critérios para avaliar a atribuição
+de qualidades a um sistema. Propomos que nosso senso comum e o uso científico
+de qualidades não diretamente observáveis correspondem com menos rigor a
+definições estruturais de segunda ordem do que a qualquer tipo de definição comportamental. 
+Notemos que uma definição de segunda ordem não garante que existam predicados $B$ que
+satisfaçam os critérios $\Beta$, ou que $B$ seja único. Algumas qualidades são
+melhor definidas em conjunto com outras qualidades relacionadas, e.g. 
+crenças e objetivos podem precisar de uma abordagem conjunta.
+
+Definições de segunda ordem criticam estruturas de crença inteiras, em vez de
+crenças individuais. Podemos trabalhar com crenças idividuais dizendo que um sistema
+crê em $p$ em um estado $s$, dado que todo bom $B$ satisfaça $B(s,p)$. Assim,
+distinguimos a interseção de todos os bons $B$.
+
+Uma analogia com a criptografia pode ser útil. Resolvemos um criptograma
+propondo hipóteses sobre a estrutura da cifra e sobre  a tradução de partes 
+do texto da cifra. Nossa solução estará completa quando adivinharmos o sistema
+da cifra que produz o criptograma de uma mensagem em texto cru. Mesmo que nunca
+provemos que nossa solução é a única, duas soluçoes diferentes quase nunca são
+encontradas, exceto para criptogramas curtos. Em uma analogia, a definição de
+segunda ordem $\Beta$ corresponde à ideia geral de cifragem, e $B$ é o sistema
+específico utilizado. Mesmo que raramente possamos provar a unicidade, não
+esperamos encontrar dois $B$ que satisfaçam $\Beta$. O artigo MH69 discute
+a improbabilidade de existirem duas boas decomposições de um autômato em
+subautômatos.
+
+Parece-me que deveria haver um metateorema da lógica matemática que afirme que
+nem todas as definições de segunda ordem podem ser reduzidas a definições de
+primeira ordem, e ainda teoremas que caracterizem as definições de segunda ordem
+que aceitam tais reduções. Esses resultados técnicos, se puderem ser produzidos,
+podem ser proveitosos à filosofia e à construção de teorias científicas formais.
+Especulo que diversos argumentos filosóficos informais de que certos conceitos
+mentais não podem ser reduzidos à física reduzir-se-ão a esboços de argumentos
+de que tais conceitos necessitam de definições de segunda ordem.
+
+Eis uma definição de segunda ordem aproximada de crença. Para cada estado $s$
+da máquina e cada sentença $p$ em uma linguagem adequada $L$, atribuimos verdade
+a $B(s,p)$ se e apenas se considerarmos que a máquina crê em $p$ quando está
+no estado $s$. A linguagem $L$ é escolhida para a nossa conveniência, e não
+assumimos que a máquina represente explicitamente sentenças em $L$. Assim,
+podemos falar em crenças de chineses, cães, empresas, termostatos e sistemas
+operacionais de computadores, sem assumir que utilizam o inglês ou qualquer
+linguagem de primeira ordem que prefiramos. $L$ pode ou não ser a linguagem que
+utilizamos para fazer afirmativas; e.g. podemos, escrevendo em inglês, utilizar
+sistematicamente sentenças em francês como objetos de crença. Entretanto,
+a melhor opção para trabalhar com a inteligência artificial deve ser fazer de
+L um subconjunto de uma linguagem _externa_, restrita de tal forma a evitar
+autorreferências paradoxais (Montague, 1963).
+
+Devemos aplicar a $B(s,p) certos critérios, i.e., $\Beta(B,W) é verdadeiro
+dado que as seguintes condições são satisfeitas:
