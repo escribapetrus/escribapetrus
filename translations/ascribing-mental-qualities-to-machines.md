@@ -427,7 +427,7 @@ ser impossível. Portanto, devemos conformar-nos com definições de segunda ord
 propriedades psicológicas.
 
 Uma definição estrutural de segunda ordem de crença é um predicado de segunda
-ordem $\Beta(W,M,B)$, que afirma que o predicado de primeira ordem $B$ é uma
+ordem $\beta(W,M,B)$, que afirma que o predicado de primeira ordem $B$ é uma
 boa noção que a máquina $M$ tem no mundo $W$. _Boa_ significa que as crenças
 que $B$ atribui a $M$ estão de acordo com as nossas ideias sobre quais crenças
 $M$ teria, e não que as crenças são em si mesmas verdadeiras. A axiomatização
@@ -438,7 +438,7 @@ de qualidades a um sistema. Propomos que nosso senso comum e o uso científico
 de qualidades não diretamente observáveis correspondem com menos rigor a
 definições estruturais de segunda ordem do que a qualquer tipo de definição comportamental. 
 Notemos que uma definição de segunda ordem não garante que existam predicados $B$ que
-satisfaçam os critérios $\Beta$, ou que $B$ seja único. Algumas qualidades são
+satisfaçam os critérios $\beta$, ou que $B$ seja único. Algumas qualidades são
 melhor definidas em conjunto com outras qualidades relacionadas, e.g. 
 crenças e objetivos podem precisar de uma abordagem conjunta.
 
@@ -453,9 +453,9 @@ do texto da cifra. Nossa solução estará completa quando adivinharmos o sistem
 da cifra que produz o criptograma de uma mensagem em texto cru. Mesmo que nunca
 provemos que nossa solução é a única, duas soluçoes diferentes quase nunca são
 encontradas, exceto para criptogramas curtos. Em uma analogia, a definição de
-segunda ordem $\Beta$ corresponde à ideia geral de cifragem, e $B$ é o sistema
+segunda ordem $\beta$ corresponde à ideia geral de cifragem, e $B$ é o sistema
 específico utilizado. Mesmo que raramente possamos provar a unicidade, não
-esperamos encontrar dois $B$ que satisfaçam $\Beta$. O artigo MH69 discute
+esperamos encontrar dois $B$ que satisfaçam $\beta$. O artigo MH69 discute
 a improbabilidade de existirem duas boas decomposições de um autômato em
 subautômatos.
 
@@ -482,5 +482,201 @@ a melhor opção para trabalhar com a inteligência artificial deve ser fazer de
 L um subconjunto de uma linguagem _externa_, restrita de tal forma a evitar
 autorreferências paradoxais (Montague, 1963).
 
-Devemos aplicar a $B(s,p) certos critérios, i.e., $\Beta(B,W) é verdadeiro
+Devemos aplicar a $B(s,p)$ certos critérios, i.e., $\beta(B,W)$ é verdadeiro
 dado que as seguintes condições são satisfeitas:
+
+1. O conjunto $Bel(s)$ de crenças, i.e. o conjunto de $p$ para que $B(s,p) é
+dito verdadeiro quando $M$ está em um estado $s$ contém consequências 
+suficientemente óbvias de alguns de seus membros.
+2. $Bel(s)$ muda de forma razoável quando o estado se modifica com o tempo.
+Queremos que novas crenças sejam consequências lógicas ou plausíveis de crenças
+anteriores, ou que sejam resultado de _comunicação_ em alguma linguagem de
+entrada ^[_input lines_], ou que sejam _observações, i.e. crenças sobre o ambiente
+sobre as quais as informações são recebidas como entrada.
+3. Preferimos que o conjunto de crenças seja tão consistente como possível.
+Admitimos que a consistência não seja um conceito quantitativo em lógica
+matemática -- um sistema é consistente ou não, mas parece que às vezes atribuímos
+conjuntos de crenças inconsistentes a máquinas ou a pessoas. Nossa intuição diz
+que devemos ser capazes de manter certas zonas de consistência em nossas crenças,
+e deve ser especialmente importante evitar inconsistências nas crenças puramente
+analíticas da máquina.
+4. Nossos critérios para sistemas de crenças podem ser fortalecidos se identificarmos
+algumas das crenças da máquina como expressões de objetivos; crenças como
+"seria bom se". Então, poderíamos dizer que o comportamento da máquina é de
+alguma forma _racional_, i.e., _ela faz aquilo que acredita que a a levará a cumprir seus objetivos_.
+Quanto mais conseguirmos explicar seu comportamento nesses termos, melhor nos parecerá
+a função $B(s,p). Também gostaríamos de interpretar as mudanças de estado intero
+como mudanças de crenças, tão quanto isso for razoável.
+5. Se a máquina se comunica, i.e. emite em alguma linguagem sentenças que podem
+ser interpretadas como afirmações, questões e comandos, gostaríamos que essas
+afirmativas estivessem entre suas crenças, a não ser que atribuamo-lha um objetivo
+como mentir. Satisfaremo-nos com nossa atribuição de crenças se pudermos
+interpretar sua capacidade de comunicação como parte dos objetivos atribuídos.
+6. Será proveitoso atribuir crenças introspectivas, e.g. a crença de que não
+sabe como voar até Boston, ou mesmo que não sabe o que quer em uma certa
+situação.
+7. Finalmente, preferiremos uma atribuição $B$ mais econômica a uma menos econômica.
+Quanto menos crenças atribuirmos, e quanto menos elas mudarem como consequência de
+mudanças de estados e comportamentos, melhor. Em particular, se
+$\forall sp.(B1(s,p) \rightarrow B2(s,p))$, mas não o contrário, e B1 contemplar
+todas as mudanças de estado e resultados ^[_outputs_] de B2, preferiremos $B1$ a $B2$.
+Isso garante que preferiremos não atribuir crenças a pedras, que não mudam de estado
+e não têm comportamentos. Um predicado-crença que se aplica a uma coleção de máquinas
+é preferível a um que se aplique a apenas uma máquina.
+
+Os critérios acima foram formulados de forma vaga. Isso seria ruim se houvesse
+um enorme rol de difentes atribuições de crenças a uma máquina em particular
+adequadas aos nossos critérios, ou se esses critérios permitissem atribuições
+muito diferentes das nossas intuições. Minha opinião é que um maior esforço
+intelectual tornará esses critérios mais precisos, sem um custo de aplicabilidade;
+mas ele permanecerão vagos, i.e., ainda atribuiremos crenças a grupos de casos.
+Entretanto, da forma vaga como tratamos o assunto hoje, não deve haver atribuições 
+de crenças para sistemas de interesse prático devidamente _boas_ que sejam
+radicalmente diferentes. Se houvesse, teríamos notado ambiguidades irresolúveis
+em nossas atribuições de crenças. Embora não queiramos fixar nossa ideia geral
+de crença a uma única axiomatização, precisamos desenhar axiomatizações precisas
+de crenças e outras qualidades mentais aplicadas a programas de computador inteligentes.
+
+# Exemplos de sistemas com qualidades mentais
+
+Consideremos alguns exemplos de máquinas e programas aos quais podemos atribuir
+estruturas como crenças e objetivos.
+
+## Termostatos
+
+Atribuir crenças a simples termostatos é desnecessário para o estudo dos
+termostatos, porque sua operação pode ser muito bem entendida sem isso.
+Entretanto, sua própria simplicidade torna claro o que está envolvido nessa
+atribuição, e defendemos (em parte como uma provocação àqueles que encaram a
+atribuição de crenças a máquinas como uma mera brincadeira) que ela é legítima[^14]
+
+[^14]: Dizer que um sistema tem crenças ou outras qualidades mentais não é
+primeiramente uma questão de complexidade do sistema. Embora carros sejam mais
+complexos do que termostatos, é difícil atribuir-lhes crenças ou objetivos;
+o mesmo talvez seja verdade no caso das peças básicas [_basic hardware_] de um
+computador, i.e., a parte do computador que executa o programa, sem o programa
+em si.
+
+Primeiro, consideremos um simples termostato que desliga o aquecimento quando
+a temperatura atinge um nível acima do configurado, liga o aquecimento quando
+a temperatura atinge um nível abaixo do desejado, e deixa aquecimento como está
+quando a temperatura está em uma faixa de variação de dois graus acima ou abaixo
+do desejado. O predicado mais simples $B(s,p)$ atribui crenças a apenas três
+afirmações: "o quarto está muito frio", "o quarto está muito quente", e
+"o quarto está confortável" -- crenças atribuídas ao termostato de forma óbvia.
+Ainda, atribuimos a ele o objetivo: "o quarto deve permanecer confortável".
+Quando o termostato crê que o quarto está frio ou quente demais, ele envia uma
+mensagem dizendo isso ao aquecedor. Um predicado de crença mais complexo poderia
+também ser definido, no qual o termostato tem uma crença sobre qual deveria ser
+a temperatura, e outra crença sobre qual ela é. Não é claro qual é melhor, mas
+se desejarmos levar em conta possíveis erros no termômetro, então precisaremos
+atribuir crenças sobre qual é a temperatura. Não atribuímos quaisquer outras crenças:
+o termostato não tem opiniões sobre o termostato estar ligado ou desligado,
+sobre o tempo lá fora, ou sobre quem venceu a batalha de Waterloo. Além disso,
+não tem crenças introspectivas, i.e., não crê crer que o quarto está quente demais.[^15]
+
+[^15]: Crenças a respeito de o quarto estar quente demais, etc. são atibuídas
+a um termostato ligado e configurado; o termostato dentro da caixa não tem
+crenças ainda, e pode ser usado de outas maneiras e com crenças diferentes.
+
+Comparemos $B(s,p)$ acima com os critérios da seção anterior. A estrutura de crença
+é consistente (porque todas as crenças são independentes umas das outras), elas
+surgem da observação, e resultam em ações de acordo com os objetivos atribuídos.
+Não há um raciocínio, mas apenas comandos (que não incluímos em nossa discussão)
+que são comunicados. Claramente, neste caso, atribuir crenças é um benefício intelectual
+modesto. Entretanto, se considerarmos toda a classe dos termostatos possíveis, 
+então a estrutura de crenças atribuída tem uma maior constância comparada 
+aos mecanismos para medir e representar a temperatura.
+
+O sistema de controle da temperatura da minha casa pode ser descrito da seguinte
+maneira: termostatos nos andares de cima e de baixo dizem ao sistema central
+que deve ligar ou desligar o fluxo de água quente para essas áreas. Um termostato
+central para a temperatura da água diz ao aquecedor que deve ligar ou desligar,
+mantendo assim o reservatório central de água na temperatura correta. Recentemente
+estava quente demais no andar de cima, e questionamo-nos se o termostato _cria_
+erroneamente que estava frio demais no andar de cima, ou se o termostato do aquecedor
+_cria_ erroneamente que a água estava fraia demais. A realidade não era nenhum desses erros:
+o controlador do andar de baixo _tentou_ desligar o fluxo de água, mas não _podia_,
+porque a válvula estava emperrada. O encanador veio até a casa e descobriu o problema,
+e veio novamente quando encomendamos uma peça substituta. Uma vez que os serviços de
+encanador estão cada vez mais caros, e microcomputadores estão cada vez mais baratos,
+faz sentido desenvolver sistemas de controle de temperatura que _conheçam_ muito mais
+sobre o estado térmico da casa, e sobre seu próprio estado de funcionamento.
+
+Em primeiro lugar, embora o presente sistema _não possa_ desligar o fluxo de água
+no andar de cima, não há razão para atribuir-lhe o _conhecimento_ de que não possa,
+e _a fortiori_ não tem a habilidade de _comunicar_ este _fato_ ou levá-lo em conta
+ao controlar o sistema. Um sistema mais avançado saberia se as _ações_ que _tentou_
+executar lograram, comunicaria as falhas e adaptar-se-lhes-ia. Adaptamo-nos à falha
+desligando o sistema inteiro até que a casa se resfriasse, e então deixando que as
+duas partes esquentassem juntas. O sistema atual tem a _capacidade física_
+de fazer isso mesmo que não tenha _conhecimento_ ou _vontade_.
+
+Embora o termostato creia que o quarto está frio demais, não há necessidade de
+dizer que ele entenda o conceito de frio demais. A estrutura interna de "o quarto
+está frio demais" é parte da nossa linguagem, não da sua.
+
+Consideremos um termostato cujos fios que ligam-no ao aquecedor foram cortados.
+Podemos ainda dizer que sabe se o quarto está frio demais? Dado que consertar o
+termostato pode ser facilitado se atribuirmos esse conhecimento, gostaríamos de
+fazê-lo. Nossa justificativa é que somos capazes de distinguir, em nossa linguagem,
+o conceito de um sistema de controle de temperatura quebrado do conceito de uma
+certa coleção de peças, i.e., fazer caracterizações intensionais de objetos físicos[^16][^17].
+
+[^16]: Tom Costello assinalou que podemos às vezes atribuir conhecimento introspectivo
+a sistemas simples. Por exemplo, podemos dizer que um relógio despertador eletrônico
+que é ligado depois de estar desligado sabe que não sabe a hora. Ele pede para ser
+reconfigurado piscando a tela. O relógio despertador convencional pode ser entendido
+da mesma forma por uma perspectiva do design ou uma perspectiva de intenção.
+Entretanto, podemos imaginar um alarme despertador que tivesse uma estratégia interessante
+para conhecer o tempo após uma falha de energia. Nesse caso, a atribuição de conhecimento
+do não conhecimento poderia ser a a melhor maneira para entender essa parte do estado.
+
+[^17]: O sistema de informações de vôo da American Airlines me disse: "sobre qual
+cidade você deseja informações de desembarque?". Eu respondi: "São Francisco".
+Ao que respondeu: "eu acredito que você disse 'São Francisco'; se isso está correto,
+diga 'sim'". Convido as pessoas com resistência em relação a máquinas que dizem "eu" ou "penso"
+a proporem sugestões sobre o que o sistema deveria ter dito.
+
+## Configurações inteligentes autorreprodutoras em um mundo celular autômato [TODO: melhorar título]
+
+Um _sistema autômato celular_ atribui um autômato finito a cada ponto do plano
+com coordenadas de inteiros. O estado de cada autômato em um tempo $t + 1$
+depende de seu estado no tempo $t$ e dos estados dos autômatos vizinhos no
+tempo $t$. Um dos primeiros a utilizar o conceito de autômatos celulares foi
+Von Neumann, que descobriu um autômato de 27 estados cujas células podiam ser
+inicializadas com uma configuração autorreprodutora que funcionava como um
+computador universal. O autômato básico no sistema de Von Neumann tinha um
+estado de descanso[^ _resting state_] 0, e um ponto em estado 0 cujos quatro
+autômatos vizinhos estariam também em estado 0. As configurações iniciais
+que consideramos teriam um número finito de células em estado 0 e, é claro,
+esta propriedade persiste mesmo que o número de células com valor diferente de
+zero cresça indefinidamente com o tempo.
+
+O sistema autorreprodutor usava os estados de uma longa cadeia de células com
+valor diferente de zero como uma fita contendo instruções para um construtor
+universal que construiria cópias da sequência a ser reproduzida, mas com cada 
+célula em um estado passivo que persistiria enquanto os autômatos vizinhos 
+estivessem também em estados passivos. Após a fase de construção, a fita seria
+copiada para criar a fita da nova máquina, e o novo sistema entraria em 
+movimento ativando-se uma das células. O novo sistema então distanciar-se-ia
+do sistema-mãe, e o processo começaria novamente. O propósito desse design era
+demonstrar que configurações arbitrariamente complexas poderiam ser
+autorreprodutoras -- complexidade garantida por serem computadores universais.
+
+Desde o tempo de Von Neumann, foram descobertas formas mais simples de células 
+de computadores universais autorreprodutoras. A mais simples até agora,
+de autômatos de dois estados, é o Jogo da Vida de John Conway (Gosper, 1976);
+para uma descrição completa e detalhada, Poundstone, 1976. O estado de uma
+célula no tempo $t + 1$ é determinado por seu estado no tempo $t$ e pelo estado
+das oito células vizinhas no tempo $t$. Um ponto cujo estado seja 0 mudará seu
+estado para 1 caso exatamente três células vizinhas estejam no estado 1. Um
+ponto cujo estado seja 1 permanecerá no estado 1 caso duas ou três células
+vizinhas estejam no estado 1. Em todos os outros casos o estado torna-se ou
+permanece 0.
+
+Embora não tenha sido esta a razão de Conway para apresentá-los, Conway e Gosper
+mostraram que computadores universais autorreprodutores poderiam ser construídos
+como configurações do Jogo da Vida. Poundstone (1984) oferece uma descrição
+completa do autômato do Jogo da Vida, incluindo computadores universais e
+sistemas autorreprodutores.
